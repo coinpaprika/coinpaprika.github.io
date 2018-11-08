@@ -1,0 +1,7 @@
+coin_id:
+  name: coin_id
+  in: path
+  required: true
+  schema:
+    type: string
+    example: btc-bitcoin

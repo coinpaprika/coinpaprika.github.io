@@ -1,0 +1,17 @@
+tag_simplified:
+  type: object
+  properties:
+    id:
+      type: string
+      example: blockchain-service
+    name:
+      type: string
+      example: Blockchain Service
+    coin_counter:
+      type: integer
+      example: 160
+      description: "Number of currencies with this tag"
+    ico_counter:
+      type: integer
+      example: 80
+      description: "Number of ic projects with this tag"

@@ -1,0 +1,13 @@
+person:
+  type: object
+  properties:
+    id:
+      type: string
+      example: vitalik-buterin
+    name:
+      type: string
+      example: Vitalik Buterin
+    teams_count:
+      type: integer
+      example: 5
+      description: "Number of teams where person is a member"

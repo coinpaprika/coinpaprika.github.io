@@ -1,0 +1,22 @@
+currency:
+  type: object
+  properties:
+    id:
+      type: string
+      example: btc-bitcoin
+    name:
+      type: string
+      example: Bitcoin
+    symbol:
+      type: string
+      example: BTC
+    rank:
+      type: integer
+      example: 1
+    is_new:
+      type: boolean
+      example: false
+      description: If currency was added within last 5 days
+    is_active:
+      type: boolean
+      example: true

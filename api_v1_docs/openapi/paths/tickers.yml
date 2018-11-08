@@ -1,0 +1,11 @@
+ticker:
+  get:
+    tags:
+    - ticker
+    summary: Get ticker information for all coins
+
+ticker_by_coin_id:
+  get:
+    tags:
+    - ticker
+    summary: Get ticker information for specific coin

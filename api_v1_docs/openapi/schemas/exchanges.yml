@@ -1,0 +1,12 @@
+exchange_simplified:
+  type: object
+  properties:
+    id:
+      type: string
+      example: binance
+    name:
+      type: string
+      example: Binance
+    rank:
+      type: integer
+      example: 1
