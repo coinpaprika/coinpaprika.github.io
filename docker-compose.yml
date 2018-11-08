@@ -1,0 +1,21 @@
+version: '3'
+
+services:
+  swagger_ui_api_docs:
+    container_name: "coinpaprika-api-swagger-ui"
+    image: swaggerapi/swagger-ui
+    ports:
+     - "127.0.0.1:1401:8080"
+    environment:
+     - API_URL=http://localhost:1400/docs/index.yml
+  coinpaprika_api_docs:
+    container_name: "coinpaprika_api_docs"
+    image: golang:1.11
+    ports:
+    - "127.0.0.1:1400:1400"
+    volumes:
+    - .:/go/src/github.com/coinpaprika/coinpaprika.github.io
+    working_dir: /go/src/github.com/coinpaprika/coinpaprika.github.io
+    command: bash -c "make run_server"
+    depends_on:
+    - swagger_ui_api_docs
