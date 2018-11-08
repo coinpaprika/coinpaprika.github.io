@@ -1,0 +1,14 @@
+tag_id:
+  name: tag_id
+  in: path
+  required: true
+  schema:
+    type: string
+    example: blockchain-service
+additional_fields:
+  name: additional_fields
+  in: query
+  required: false
+  schema:
+    type: string
+    example: coins

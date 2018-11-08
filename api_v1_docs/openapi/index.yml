@@ -34,6 +34,7 @@ servers:
 tags:
 - name: "global"
 - name: "coins"
+- name: "tags"
 - name: "tickers"
 - name: "search"
 
@@ -45,6 +46,12 @@ paths:
   # Coins
   /coins:
     $ref: "paths/coins.yml#/coins"
+
+  # Tags
+  /tags:
+    $ref: "paths/tags.yml#/tags"
+  /tags/{tag_id}:
+    $ref: "paths/tags.yml#/tag_by_id"
 
   # Tickers
   /ticker:
