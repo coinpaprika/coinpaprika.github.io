@@ -60,6 +60,9 @@ paths:
   /ticker/{coin_id}:
     $ref: "paths/tickers.yml#/ticker_by_coin_id"
 
+  /tickers/historical/{coin_id}:
+      $ref: "paths/tickers.yml#/tickers_historical"
+
   # Search
   /search:
     $ref: "paths/search.yml#/search"

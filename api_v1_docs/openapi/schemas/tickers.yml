@@ -47,3 +47,27 @@ tick:
     last_updated:
       type: string
       example: 1525088839
+
+historical_ticks:
+  type: array
+  description: Historical tick response.
+  items:
+    $ref: "tickers.yml#/historical_tick"
+
+historical_tick:
+  type: object
+  description: Historical tick response.
+  properties:
+    timestamp:
+      type: string
+      description: RFC3999 (ISO-8601) format
+      example: "2018-03-01T00:00:00Z"
+    price:
+      type: number
+      example: 855.53
+    volume_24h:
+      type: integer
+      example: 1968587956
+    market_cap:
+      type: integer
+      example: 83761787514
