@@ -20,6 +20,7 @@ coins_ohlcv_latest:
   get:
     summary: Get lasted OHLC (open high low close) values with volume and market_cap
     parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
       - $ref: "../parameters/coins.yml#/ohlcv_quote"
     tags:
     - coins
@@ -39,6 +40,7 @@ coins_ohlcv_historical:
   get:
     summary: Get Historical OHLC (open high low close) values with volume and market_cap
     parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
       - $ref: "../parameters/coins.yml#/ohlcv_start"
       - $ref: "../parameters/coins.yml#/ohlcv_end"
       - $ref: "../parameters/coins.yml#/ohlcv_limit"

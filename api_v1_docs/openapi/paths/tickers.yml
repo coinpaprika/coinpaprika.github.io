@@ -36,6 +36,7 @@ tickers_historical:
     - tickers
     summary: Get historical tickers for specific coin
     parameters:
+        - $ref: "../parameters/coins.yml#/coin_id"
         - $ref: "../parameters/tickers.yml#/historical_start"
         - $ref: "../parameters/tickers.yml#/historical_end"
         - $ref: "../parameters/tickers.yml#/historical_limit"
