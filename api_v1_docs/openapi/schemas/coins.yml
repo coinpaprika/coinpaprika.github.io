@@ -20,3 +20,39 @@ currency:
     is_active:
       type: boolean
       example: true
+
+
+coins_ohlcv_latest:
+  type: object
+  properties:
+    time_open:
+      type: string
+      description: RFC3999 (ISO-8601) format
+      example: "2018-03-01T00:00:00Z"
+    time_close:
+      type: string
+      description: RFC3999 (ISO-8601) format
+      example: "2018-03-01T23:59:59Z"
+    open:
+      type: number
+      example: 856.012
+    high:
+      type: number
+      example: 880.302
+    low:
+      type: number
+      example: 851.92
+    close:
+      type: number
+      example: 872.2
+    volume:
+      type: integer
+      example: 1868520000
+    market_cap:
+      type: integer
+      example: 83808161204
+
+coins_ohlcv_historical:
+  type: array
+  items:
+    $ref: "coins.yml#/coins_ohlcv_latest"

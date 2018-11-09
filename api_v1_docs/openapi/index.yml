@@ -47,6 +47,12 @@ paths:
   /coins:
     $ref: "paths/coins.yml#/coins"
 
+  /coins/ohlcv/latest/{coin_id}:
+    $ref: "paths/coins.yml#/coins_ohlcv_latest"
+
+  /coins/ohlcv/historical/{coin_id}:
+    $ref: "paths/coins.yml#/coins_ohlcv_historical"
+
   # Tags
   /tags:
     $ref: "paths/tags.yml#/tags"

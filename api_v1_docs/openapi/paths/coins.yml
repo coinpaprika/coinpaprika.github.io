@@ -14,3 +14,45 @@ coins:
                 $ref: "../schemas/coins.yml#/currency"
       429:
         description: "too many requests"
+
+
+coins_ohlcv_latest:
+  get:
+    summary: Get lasted OHLC (open high low close) values with volume and market_cap
+    parameters:
+      - $ref: "../parameters/coins.yml#/ohlcv_quote"
+    tags:
+    - coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/coins_ohlcv_latest"
+      429:
+        description: "too many requests"
+
+coins_ohlcv_historical:
+  get:
+    summary: Get Historical OHLC (open high low close) values with volume and market_cap
+    parameters:
+      - $ref: "../parameters/coins.yml#/ohlcv_start"
+      - $ref: "../parameters/coins.yml#/ohlcv_end"
+      - $ref: "../parameters/coins.yml#/ohlcv_limit"
+      - $ref: "../parameters/coins.yml#/ohlcv_quote"
+    tags:
+    - coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/coins_ohlcv_historical"
+      429:
+        description: "too many requests"
