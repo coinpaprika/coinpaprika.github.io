@@ -15,10 +15,11 @@ coins:
       429:
         description: "too many requests"
 
-
 coin_by_id:
   get:
     summary: Get coin by ID
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
     tags:
     - coins
     responses:

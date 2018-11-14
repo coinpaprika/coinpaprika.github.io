@@ -13,7 +13,7 @@ run: ## run server with documentation and swagger-ui
 	open http://localhost:1400
 	open http://localhost:1401
 
-stop:
+stop: ## stop running dockers
 	docker-compose --file=docker-compose.yml down
 
 run_server: ## run server with documentation
