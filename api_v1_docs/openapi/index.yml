@@ -37,6 +37,7 @@ tags:
 - name: "tags"
 - name: "tickers"
 - name: "search"
+- name: "deprecated"
 
 paths:
   # Global
@@ -63,16 +64,17 @@ paths:
     $ref: "paths/tags.yml#/tag_by_id"
 
   # Tickers
-  /ticker:
-    $ref: "paths/tickers.yml#/ticker"
-
-  /ticker/{coin_id}:
-    $ref: "paths/tickers.yml#/ticker_by_coin_id"
-
   /tickers/historical/{coin_id}:
       $ref: "paths/tickers.yml#/tickers_historical"
 
   # Search
   /search:
     $ref: "paths/search.yml#/search"
+
+  # Deprecated
+  /ticker:
+    $ref: "paths/deprecated.yml#/ticker_deprecated"
+
+  /ticker/{coin_id}:
+    $ref: "paths/deprecated.yml#/ticker_by_coin_id_deprecated"
 
