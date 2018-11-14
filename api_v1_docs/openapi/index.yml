@@ -64,6 +64,12 @@ paths:
     $ref: "paths/tags.yml#/tag_by_id"
 
   # Tickers
+  /tickers:
+    $ref: "paths/tickers.yml#/tickers"
+
+  /tickers/{coin_id}:
+    $ref: "paths/tickers.yml#/tickers_by_id"
+
   /tickers/historical/{coin_id}:
       $ref: "paths/tickers.yml#/tickers_historical"
 

@@ -20,6 +20,8 @@ ticker_by_coin_id_deprecated:
     tags:
     - deprecated
     summary: Get ticker by ID [DEPRECATED]
+    parameters:
+    - $ref: "../parameters/coins.yml#/coin_id"
     responses:
       200:
         description: "successful operation"

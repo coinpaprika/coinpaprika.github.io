@@ -1,3 +1,37 @@
+tickers:
+  get:
+    tags:
+      - tickers
+    summary: Get tickers for all coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/tickers.yml#/tick"
+      429:
+        description: "too many requests"
+
+tickers_by_id:
+  get:
+    tags:
+      - tickers
+    summary: Get ticker information for specific coin
+    parameters:
+     - $ref: "../parameters/coins.yml#/coin_id"
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/tickers.yml#/tick"
+      429:
+        description: "too many requests"
+
 tickers_historical:
   get:
     tags:
