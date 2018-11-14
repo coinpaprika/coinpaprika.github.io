@@ -13,37 +13,37 @@ tick_deprecated:
       example: BTC
     rank:
       type: string
-      example: 1
+      example: "1"
     price_usd:
       type: string
-      example: 9259.01
+      example: "9259.01"
     price_btc:
       type: string
-      example: 1
+      example: "1"
     volume_24h_usd:
       type: string
-      example: 8102619999
+      example: "8102619999"
     market_cap_usd:
       type: string
-      example: 157468557128
+      example: "157468557128"
     circulating_supply:
       type: string
-      example: 17007062
+      example: "17007062"
     total_supply:
       type: string
-      example: 17007062
+      example: "17007062"
     max_supply:
       type: string
-      example: 21000000
+      example: "21000000"
     percent_change_1h:
       type: string
-      example: -0.26
+      example: "-0.26"
     percent_change_24h:
       type: string
-      example: 0.22
+      example: "0.22"
     percent_change_7d:
       type: string
-      example: 4.1
+      example: "4.1"
     last_updated:
       type: string
-      example: 1525088839
+      example: "1525088839"
