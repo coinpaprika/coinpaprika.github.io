@@ -1,0 +1,16 @@
+person_by_id:
+  get:
+    summary: Get people by ID
+    parameters:
+      - $ref: "../parameters/people.yml#/person_id"
+    tags:
+    - people
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/people.yml#/person_by_id"
+      429:
+        description: "too many requests"

@@ -34,6 +34,7 @@ servers:
 tags:
 - name: "global"
 - name: "coins"
+- name: "people"
 - name: "tags"
 - name: "tickers"
 - name: "search"
@@ -56,6 +57,10 @@ paths:
 
   /coins/ohlcv/historical/{coin_id}:
     $ref: "paths/coins.yml#/coins_ohlcv_historical"
+
+  # People
+  /people/{person_id}:
+    $ref: "paths/people.yml#/person_by_id"
 
   # Tags
   /tags:
