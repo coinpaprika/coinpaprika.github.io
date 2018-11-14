@@ -98,6 +98,10 @@ coin_links:
       type: array
       items: string
       example: ["https://www.youtube.com/watch?v=Um63OQz3bjo"]
+    medium:
+      type: array
+      items: string
+      example: []
 
 coins_ohlcv_latest:
   type: object
