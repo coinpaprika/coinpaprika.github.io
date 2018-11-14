@@ -1,6 +1,6 @@
 coins:
   get:
-    summary: Get all coins listed on coinpaprika
+    summary: List coins
     tags:
     - coins
     responses:
@@ -12,6 +12,22 @@ coins:
               type: array
               items:
                 $ref: "../schemas/coins.yml#/currency"
+      429:
+        description: "too many requests"
+
+
+coin_by_id:
+  get:
+    summary: Get coin by ID
+    tags:
+    - coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/coins.yml#/coin_extended"
       429:
         description: "too many requests"
 

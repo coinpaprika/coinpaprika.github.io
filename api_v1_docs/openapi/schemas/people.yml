@@ -11,3 +11,16 @@ person:
       type: integer
       example: 5
       description: "Number of teams where person is a member"
+
+person_with_position:
+  type: object
+  properties:
+    id:
+      type: string
+      example: vitalik-buterin
+    name:
+      type: string
+      example: Vitalik Buterin
+    position:
+      type: string
+      example: Author

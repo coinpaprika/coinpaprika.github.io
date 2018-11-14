@@ -21,6 +21,83 @@ currency:
       type: boolean
       example: true
 
+coin_extended:
+  type: object
+  properties:
+    id:
+      type: string
+      example: btc-bitcoin
+    name:
+      type: string
+      example: Bitcoin
+    symbol:
+      type: string
+      example: BTC
+    rank:
+      type: integer
+      example: 1
+    is_new:
+      type: boolean
+      example: false
+      description: If currency was added within last 5 days
+    is_active:
+      type: boolean
+      example: true
+    tags:
+      type: array
+      items:
+        $ref: "tags.yml#/tag_simplified"
+    team:
+      type: array
+      items:
+        $ref: "people.yml#/person_with_position"
+    description:
+      type: string
+      example: "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital
+      currency, as the system works without a central bank or single administrator."
+    message:
+      type: string
+    open_source:
+      type: boolean
+      example: true
+    started_at:
+      type: string
+      example: "2009-01-03T00:00:00Z"
+    development_status:
+      type: string
+      example: "Working product"
+    links:
+      $ref: "#/coin_links"
+    whitepaper:
+      $ref: "whitepaper.yml#/whitepaper"
+
+coin_links:
+  type: object
+  properties:
+    explorer:
+      type: array
+      items: string
+      example: ["http://blockchain.com/explorer", "https://blockchair.com/bitcoin/blocks", "https://blockexplorer.com/", "https://live.blockcypher.com/btc/"]
+    facebook:
+      type: array
+      items: string
+      example: ["https://www.facebook.com/bitcoins/"]
+    reddit:
+      type: array
+      items: string
+      example: ["https://www.reddit.com/r/bitcoin"]
+    source_code:
+      type: array
+      items: string
+      example: ["https://github.com/bitcoin/bitcoin"]
+    website:
+      type: array
+      items: string
+      example: ["https://bitcoin.org/"]
+    youtube:
+      type: array
+      items: string
+      example: ["https://www.youtube.com/watch?v=Um63OQz3bjo"]
 
 coins_ohlcv_latest:
   type: object
