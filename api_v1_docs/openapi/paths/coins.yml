@@ -33,9 +33,28 @@ coin_by_id:
         description: "too many requests"
 
 
+twitter:
+  get:
+    summary: Get twitter timeline for coin
+    description: Not more than last 50 tweets
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/coins.yml#/twitter"
+      429:
+        description: "too many requests"
+
 coins_ohlcv_latest:
   get:
-    summary: Get lasted OHLC (open high low close) values with volume and market_cap
+    summary: Get lasted OHLC
+    description: Open/High/Low/Close values with volume and market_cap
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
       - $ref: "../parameters/coins.yml#/ohlcv_quote"
@@ -55,7 +74,8 @@ coins_ohlcv_latest:
 
 coins_ohlcv_historical:
   get:
-    summary: Get Historical OHLC (open high low close) values with volume and market_cap
+    summary: Get Historical OHLC
+    description: Open/High/Low/Close values with volume and market_cap
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
       - $ref: "../parameters/coins.yml#/ohlcv_start"

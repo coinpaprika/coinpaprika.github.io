@@ -94,6 +94,7 @@ historical_ticks:
 historical_tick:
   type: object
   description: Historical tick response.
+  required: ["timestamp", "price", "volume_24h", "market_cap"]
   properties:
     timestamp:
       type: string

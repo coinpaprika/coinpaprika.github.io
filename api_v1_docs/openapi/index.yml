@@ -52,6 +52,10 @@ paths:
   /coins/{coin_id}:
     $ref: "paths/coins.yml#/coin_by_id"
 
+
+  /coins/{coin_id}/twitter:
+      $ref: "paths/coins.yml#/twitter"
+
   /coins/ohlcv/latest/{coin_id}:
     $ref: "paths/coins.yml#/coins_ohlcv_latest"
 

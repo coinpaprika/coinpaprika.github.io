@@ -103,8 +103,33 @@ coin_links:
       items: string
       example: []
 
+twitter:
+  type: object
+  required: ["date", "user_name", "status", "is_retweet", "status_link"]
+  properties:
+    date:
+      type: string
+      description: RFC3999 (ISO-8601) format
+      example: "2018-10-03T11:48:19Z"
+    user_name:
+      type: string
+      example: bitcoincoreorg
+    status:
+      type: string
+      example: Bitcoin Core 0.17.0 Released https://t.co/ciwCREngon
+    is_retweet:
+      type: boolean
+      example: false
+    status_link:
+      type: string
+    media_link:
+      type: string
+    video_link:
+      type: string
+
 coins_ohlcv_latest:
   type: object
+  required: ["time_open", "time_close"]
   properties:
     time_open:
       type: string
