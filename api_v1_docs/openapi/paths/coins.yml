@@ -51,6 +51,25 @@ twitter:
       429:
         description: "too many requests"
 
+events:
+  get:
+    summary: Get coin events by coin ID
+    parameters:
+    - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/events.yml#/event"
+      429:
+        description: "too many requests"
+
 coins_ohlcv_latest:
   get:
     summary: Get lasted OHLC
