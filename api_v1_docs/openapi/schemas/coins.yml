@@ -60,12 +60,24 @@ coin_extended:
     open_source:
       type: boolean
       example: true
+    hardware_wallet:
+      type: boolean
+      example: true
     started_at:
       type: string
       example: "2009-01-03T00:00:00Z"
     development_status:
       type: string
-      example: "Working product"
+      example: Working product
+    proof_type:
+      type: string
+      example: Proof of work
+    org_structure:
+      type: string
+      example: Decentralized
+    hash_algorithm:
+      type: string
+      example: SHA256
     links:
       $ref: "#/coin_links"
     whitepaper:
