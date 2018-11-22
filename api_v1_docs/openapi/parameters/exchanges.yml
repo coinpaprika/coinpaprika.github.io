@@ -1,0 +1,7 @@
+exchange_id:
+  name: exchange_id
+  in: path
+  required: true
+  schema:
+    type: string
+    example: binance

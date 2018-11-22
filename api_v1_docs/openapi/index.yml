@@ -37,6 +37,7 @@ tags:
 - name: "people"
 - name: "tags"
 - name: "tickers"
+- name: "exchanges"
 - name: "search"
 - name: "deprecated"
 
@@ -83,6 +84,12 @@ paths:
 
   /tickers/{coin_id}/historical:
       $ref: "paths/tickers.yml#/tickers_historical"
+
+  # Exchanges
+  /exchanges:
+    $ref: "paths/exchanges.yml#/exchanges"
+  /exchanges/{exchange_id}:
+    $ref: "paths/exchanges.yml#/exchange_by_id"
 
   # Search
   /search:

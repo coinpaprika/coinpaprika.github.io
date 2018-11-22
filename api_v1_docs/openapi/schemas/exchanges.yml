@@ -10,3 +10,83 @@ exchange_simplified:
     rank:
       type: integer
       example: 1
+
+exchange:
+  type: object
+  properties:
+    id:
+      type: string
+      example: binance
+    name:
+      type: string
+      example: Binance
+    active:
+      type: boolean
+      example: true
+    message:
+      type: string
+      example: "Currently under maintenance"
+    links:
+      $ref: "#/exchange_links"
+    markets_data_fetched:
+      type: boolean
+      example: true
+    adjusted_rank:
+      type: integer
+      example: 1
+    reported_rank:
+      type: integer
+      example: 3
+    currencies:
+      type: integer
+      example: 150
+    markets:
+      type: integer
+      example: 385
+    fiats:
+      type: array
+      items: "#/exchange_fiat"
+      example: [{"name":"US Dollars","symbol":"USD"}]
+    quotes:
+      $ref: "#/quotes"
+    last_updated:
+      type: string
+      example: "2018-11-14T07:20:41Z"
+
+exchange_fiat:
+  type: object
+  properties:
+    name:
+      type: string
+      example: "US Dollars"
+    symbol:
+      type: string
+      example: "USD"
+
+exchange_links:
+  type: object
+  properties:
+    website:
+      type: array
+      items: string
+      example: ["https://www.binance.com/"]
+    twitter:
+      type: array
+      items: string
+      example: ["https://twitter.com/binance"]
+
+quotes:
+  type: object
+  properties:
+    $KEY:
+      $ref: "#/quote"
+
+quote:
+  type: object
+  properties:
+    reported_volume_24h:
+      type: number
+      example: 794020873
+    adjusted_volume_24h:
+      type: number
+      example: 794020873
