@@ -58,10 +58,10 @@ paths:
   /coins/{coin_id}/events:
     $ref: "paths/coins.yml#/events"
 
-  /coins/ohlcv/latest/{coin_id}:
+  /coins/{coin_id}/ohlcv/latest/:
     $ref: "paths/coins.yml#/coins_ohlcv_latest"
 
-  /coins/ohlcv/historical/{coin_id}:
+  /coins/{coin_id}/ohlcv/historical:
     $ref: "paths/coins.yml#/coins_ohlcv_historical"
 
   # People
@@ -81,7 +81,7 @@ paths:
   /tickers/{coin_id}:
     $ref: "paths/tickers.yml#/tickers_by_id"
 
-  /tickers/historical/{coin_id}:
+  /tickers/{coin_id}/historical:
       $ref: "paths/tickers.yml#/tickers_historical"
 
   # Search
