@@ -11,6 +11,23 @@ exchange_simplified:
       type: integer
       example: 1
 
+exchange_with_share:
+  type: object
+  properties:
+    id:
+      type: string
+      example: binance
+    name:
+      type: string
+      example: Binance
+    fiats:
+      type: array
+      items: "#/exchange_fiat"
+      example: [{"name":"US Dollars","symbol":"USD"}]
+    adjusted_volume_24h_share:
+      type: number
+      example: 11.26
+
 exchange:
   type: object
   properties:

@@ -114,3 +114,22 @@ coins_ohlcv_historical:
                 $ref: "../schemas/coins.yml#/coins_ohlcv_historical"
       429:
         description: "too many requests"
+
+exchanges_by_coin_id:
+  get:
+    summary: Get exchanges by coin ID
+    parameters:
+    - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/exchanges.yml#/exchange_with_share"
+      429:
+        description: "too many requests"
