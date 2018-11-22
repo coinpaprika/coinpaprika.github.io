@@ -62,6 +62,9 @@ paths:
   /coins/{coin_id}/exchanges:
     $ref: "paths/coins.yml#/exchanges_by_coin_id"
 
+  /coins/{coin_id}/markets:
+    $ref: "paths/coins.yml#/markets_by_coin_id"
+
   /coins/{coin_id}/ohlcv/latest/:
     $ref: "paths/coins.yml#/coins_ohlcv_latest"
 
@@ -86,7 +89,7 @@ paths:
     $ref: "paths/tickers.yml#/tickers_by_id"
 
   /tickers/{coin_id}/historical:
-      $ref: "paths/tickers.yml#/tickers_historical"
+    $ref: "paths/tickers.yml#/tickers_historical"
 
   # Exchanges
   /exchanges:

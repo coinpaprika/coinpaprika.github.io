@@ -138,7 +138,7 @@ market:
     outlier:
       type: bool
       example: false
-    reported_volume_share:
+    reported_volume_24h_share:
       type: number
       example: 30.29
     quotes:
@@ -146,7 +146,6 @@ market:
     last_updated:
       type: string
       example: "2018-11-14T07:20:41Z"
-
 
 market_quotes:
   type: object
@@ -163,3 +162,49 @@ market_quote:
     volume_24h:
       type: number
       example: 229658776.19514218
+
+
+coin_market:
+  type: object
+  properties:
+    exchange_id:
+      type: string
+      example: binance
+    exchange_name:
+      type: string
+      example: Binance
+    pair:
+      type: string
+      example: BTC/USDT
+    base_currency_id:
+      type: string
+      example: btc-bitcoin
+    base_currency_name:
+      type: string
+      example: Bitcoin
+    quote_currency_id:
+      type: string
+      example: usdt-tether
+    quote_currency_name:
+      type: string
+      example: Tether
+    market_url:
+      type: string
+      example: https://www.binance.com/en/trade/BTC_USDT
+    category:
+      type: string
+      example: Spot
+    fee_type:
+      type: string
+      example: Percentage
+    outlier:
+      type: bool
+      example: false
+    adjusted_volume_24h_share:
+      type: number
+      example: 30.29
+    quotes:
+      $ref: "#/market_quotes"
+    last_updated:
+      type: string
+      example: "2018-11-14T07:20:41Z"

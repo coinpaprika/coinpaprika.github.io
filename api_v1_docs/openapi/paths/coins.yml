@@ -93,7 +93,7 @@ coins_ohlcv_latest:
 
 coins_ohlcv_historical:
   get:
-    summary: Get Historical OHLC
+    summary: Get historical OHLC
     description: Open/High/Low/Close values with volume and market_cap
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
@@ -131,5 +131,24 @@ exchanges_by_coin_id:
               type: array
               items:
                 $ref: "../schemas/exchanges.yml#/exchange_with_share"
+      429:
+        description: "too many requests"
+
+markets_by_coin_id:
+  get:
+    summary: Get markets by coin ID
+    parameters:
+    - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/exchanges.yml#/coin_market"
       429:
         description: "too many requests"
