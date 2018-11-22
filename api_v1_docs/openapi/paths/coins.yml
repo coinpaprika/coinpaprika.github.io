@@ -72,7 +72,7 @@ events:
 
 coins_ohlcv_latest:
   get:
-    summary: Get lasted OHLC
+    summary: Get latest OHLC
     description: Open/High/Low/Close values with volume and market_cap
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
