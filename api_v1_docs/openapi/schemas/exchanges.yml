@@ -107,3 +107,59 @@ quote:
     adjusted_volume_24h:
       type: number
       example: 794020873
+
+market:
+  type: object
+  properties:
+    pair:
+      type: string
+      example: BTC/USDT
+    base_currency_id:
+      type: string
+      example: btc-bitcoin
+    base_currency_name:
+      type: string
+      example: Bitcoin
+    quote_currency_id:
+      type: string
+      example: usdt-tether
+    quote_currency_name:
+      type: string
+      example: Tether
+    market_url:
+      type: string
+      example: https://www.binance.com/en/trade/BTC_USDT
+    category:
+      type: string
+      example: Spot
+    fee_type:
+      type: string
+      example: Percentage
+    outlier:
+      type: bool
+      example: false
+    reported_volume_share:
+      type: number
+      example: 30.29
+    quotes:
+      $ref: "#/market_quotes"
+    last_updated:
+      type: string
+      example: "2018-11-14T07:20:41Z"
+
+
+market_quotes:
+  type: object
+  properties:
+    $KEY:
+      $ref: "#/market_quote"
+
+market_quote:
+  type: object
+  properties:
+    price:
+      type: number
+      example: 4582.6967796728
+    volume_24h:
+      type: number
+      example: 229658776.19514218

@@ -31,3 +31,22 @@ exchange_by_id:
               $ref: "../schemas/exchanges.yml#/exchange"
       429:
         description: "too many requests"
+
+markets_by_exchange_id:
+  get:
+    summary: List markets by exchange ID
+    parameters:
+    - $ref: "../parameters/exchanges.yml#/exchange_id"
+    tags:
+    - exchanges
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/exchanges.yml#/market"
+      429:
+        description: "too many requests"

@@ -93,6 +93,8 @@ paths:
     $ref: "paths/exchanges.yml#/exchanges"
   /exchanges/{exchange_id}:
     $ref: "paths/exchanges.yml#/exchange_by_id"
+  /exchanges/{exchange_id}/markets:
+    $ref: "paths/exchanges.yml#/markets_by_exchange_id"
 
   # Search
   /search:
