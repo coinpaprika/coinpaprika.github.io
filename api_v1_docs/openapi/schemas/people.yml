@@ -88,6 +88,9 @@ coin_and_position:
     coin_id:
       type: string
       example: eth-ethereum
+    coin_name:
+      type: string
+      example: Ethereum
     position:
       type: string
       example: Author
