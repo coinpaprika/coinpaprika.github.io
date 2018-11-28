@@ -32,7 +32,7 @@ coin_extended:
       example: Bitcoin
     parent:
       type: "#/coin_parent"
-      example: {"id":"eth-ethereum","name":"Ethereum"}
+      example: {"id":"eth-ethereum","name":"Ethereum", "symbol":"ETH"}
       nullable: true
     symbol:
       type: string
@@ -96,6 +96,9 @@ coin_parent:
     name:
       type: string
       example: Ethereum
+    symbol:
+      type: string
+      example: ETH
 
 coin_links:
   type: object
