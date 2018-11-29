@@ -1,12 +1,12 @@
 event:
   type: object
-  required: ["date", "name", "description", "is_conference", "link"]
   properties:
     date:
       type: string
       example: "2018-04-02T00:00:00Z"
     date_to:
       type: string
+      nullable: true
     name:
       type: string
       example: "CME: April First Trade"
@@ -22,3 +22,4 @@ event:
     proof_image_link:
       type: string
       example: "https://static.coinpaprika.com/storage/cdn/event_images/16635.jpg"
+      nullable: true

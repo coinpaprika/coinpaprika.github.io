@@ -30,13 +30,13 @@ coin_extended:
     name:
       type: string
       example: Bitcoin
+    symbol:
+      type: string
+      example: BTC
     parent:
       type: "#/coin_parent"
       example: {"id":"eth-ethereum","name":"Ethereum", "symbol":"ETH"}
       nullable: true
-    symbol:
-      type: string
-      example: BTC
     rank:
       type: integer
       example: 1
@@ -59,6 +59,7 @@ coin_extended:
       type: string
       example: "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital
       currency, as the system works without a central bank or single administrator."
+      nullable: true
     message:
       type: string
     open_source:
@@ -70,18 +71,23 @@ coin_extended:
     started_at:
       type: string
       example: "2009-01-03T00:00:00Z"
+      nullable: true
     development_status:
       type: string
       example: Working product
+      nullable: true
     proof_type:
       type: string
       example: Proof of work
+      nullable: true
     org_structure:
       type: string
       example: Decentralized
+      nullable: true
     hash_algorithm:
       type: string
       example: SHA256
+      nullable: true
     links:
       $ref: "#/coin_links"
     whitepaper:
@@ -107,34 +113,40 @@ coin_links:
       type: array
       items: string
       example: ["http://blockchain.com/explorer", "https://blockchair.com/bitcoin/blocks", "https://blockexplorer.com/", "https://live.blockcypher.com/btc/"]
+      nullable: true
     facebook:
       type: array
       items: string
       example: ["https://www.facebook.com/bitcoins/"]
+      nullable: true
     reddit:
       type: array
       items: string
       example: ["https://www.reddit.com/r/bitcoin"]
+      nullable: true
     source_code:
       type: array
       items: string
       example: ["https://github.com/bitcoin/bitcoin"]
+      nullable: true
     website:
       type: array
       items: string
       example: ["https://bitcoin.org/"]
+      nullable: true
     youtube:
       type: array
       items: string
       example: ["https://www.youtube.com/watch?v=Um63OQz3bjo"]
+      nullable: true
     medium:
       type: array
       items: string
-      example: []
+      example: null
+      nullable: true
 
 twitter:
   type: object
-  required: ["date", "user_name", "status", "is_retweet", "status_link"]
   properties:
     date:
       type: string
@@ -153,12 +165,13 @@ twitter:
       type: string
     media_link:
       type: string
+      nullable: true
     video_link:
       type: string
+      nullable: true
 
 coins_ohlcv_latest:
   type: object
-  required: ["time_open", "time_close"]
   properties:
     time_open:
       type: string
@@ -171,21 +184,27 @@ coins_ohlcv_latest:
     open:
       type: number
       example: 856.012
+      nullable: true
     high:
       type: number
       example: 880.302
+      nullable: true
     low:
       type: number
       example: 851.92
+      nullable: true
     close:
       type: number
       example: 872.2
+      nullable: true
     volume:
       type: integer
       example: 1868520000
+      nullable: true
     market_cap:
       type: integer
       example: 83808161204
+      nullable: true
 
 coins_ohlcv_historical:
   type: array
