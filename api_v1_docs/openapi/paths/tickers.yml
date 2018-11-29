@@ -3,6 +3,14 @@ tickers:
     tags:
       - tickers
     summary: Get tickers for all coins
+    description: >
+      Warning: Values of three fields:
+       - percent_change_12h
+       - volume_24h_change_24h
+       - market_cap_change_24h
+
+      are not yet supported and equal to 0.0 for every coin. Proper values will be added in the next API release.
+
     parameters:
       - $ref: "../parameters/tickers.yml#/quotes"
     responses:
@@ -22,6 +30,13 @@ tickers_by_id:
     tags:
       - tickers
     summary: Get ticker information for specific coin
+    description: >
+      Warning: Values of three fields:
+       - percent_change_12h
+       - volume_24h_change_24h
+       - market_cap_change_24h
+
+      are not yet supported and equal to 0.0 for every coin. Proper values will be added in the next API release.
     parameters:
      - $ref: "../parameters/coins.yml#/coin_id"
      - $ref: "../parameters/tickers.yml#/quotes"
