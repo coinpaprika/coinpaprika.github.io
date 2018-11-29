@@ -1,3 +1,14 @@
+quotes:
+  name: quotes
+  in: query
+  required: false
+  description: >
+    Comma separated list of quotes to return. Currently allowed values: USD, BTC, ETH
+  schema:
+    type: string
+    default: USD
+    example: USD,BTC
+
 historical_start:
   name: start
   in: query
@@ -11,6 +22,7 @@ historical_start:
        - Unix timestamp (in seconds) eg. `1518671700`
   schema:
     type: string
+
 historical_end:
   name: end
   in: query
@@ -25,6 +37,7 @@ historical_end:
   schema:
     type: string
     default: NOW
+
 historical_limit:
   name: limit
   in: query
@@ -33,6 +46,7 @@ historical_limit:
   schema:
     type: integer
     default: 1000
+
 historical_quote:
   name: quote
   in: query
@@ -41,6 +55,7 @@ historical_quote:
   schema:
     type: string
     default: usd
+
 historical_interval:
   name: interval
   in: query

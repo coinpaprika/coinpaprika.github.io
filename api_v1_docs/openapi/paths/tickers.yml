@@ -3,6 +3,8 @@ tickers:
     tags:
       - tickers
     summary: Get tickers for all coins
+    parameters:
+      - $ref: "../parameters/tickers.yml#/quotes"
     responses:
       200:
         description: "successful operation"
@@ -22,6 +24,7 @@ tickers_by_id:
     summary: Get ticker information for specific coin
     parameters:
      - $ref: "../parameters/coins.yml#/coin_id"
+     - $ref: "../parameters/tickers.yml#/quotes"
     responses:
       200:
         description: "successful operation"
