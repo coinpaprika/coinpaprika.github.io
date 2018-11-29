@@ -139,6 +139,7 @@ markets_by_coin_id:
     summary: Get markets by coin ID
     parameters:
     - $ref: "../parameters/coins.yml#/coin_id"
+    - $ref: "../parameters/coins.yml#/quotes"
     tags:
     - coins
     responses:

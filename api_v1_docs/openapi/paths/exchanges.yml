@@ -1,6 +1,8 @@
 exchanges:
   get:
     summary: List exchanges
+    parameters:
+      - $ref: "../parameters/exchanges.yml#/quotes"
     tags:
     - exchanges
     responses:
@@ -19,6 +21,7 @@ exchange_by_id:
   get:
     summary: Get exchange by ID
     parameters:
+    - $ref: "../parameters/exchanges.yml#/quotes"
     - $ref: "../parameters/exchanges.yml#/exchange_id"
     tags:
     - exchanges
@@ -36,6 +39,7 @@ markets_by_exchange_id:
   get:
     summary: List markets by exchange ID
     parameters:
+    - $ref: "../parameters/exchanges.yml#/quotes"
     - $ref: "../parameters/exchanges.yml#/exchange_id"
     tags:
     - exchanges

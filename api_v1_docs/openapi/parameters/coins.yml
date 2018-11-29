@@ -6,6 +6,18 @@ coin_id:
     type: string
     example: btc-bitcoin
 
+quotes:
+  name: quotes
+  in: query
+  required: false
+  description: >
+    Comma separated list of quotes to return. Currently allowed values: USD, BTC, ETH, PLN
+  schema:
+    type: string
+    default: USD
+    example: USD,BTC
+
+
 ohlcv_start:
   name: start
   in: query
