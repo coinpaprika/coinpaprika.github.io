@@ -7,6 +7,8 @@ tag_id:
     example: blockchain-service
 additional_fields:
   name: additional_fields
+  description: >
+    Comma separated list of additional fields to include in query result for each tag. Currently "coins" is the only supported value.
   in: query
   required: false
   schema:

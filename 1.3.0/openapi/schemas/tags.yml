@@ -42,4 +42,5 @@ tag:
     coins:
       type: array
       items: string
+      nullable: true
       example: ["dcr-decred","hc-hypercash","nxs-nexus"]
