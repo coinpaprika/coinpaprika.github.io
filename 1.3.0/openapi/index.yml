@@ -35,14 +35,14 @@ servers:
 - url: https://api.coinpaprika.com/v1
 
 tags:
-- name: "global"
-- name: "coins"
-- name: "people"
-- name: "tags"
-- name: "tickers"
-- name: "exchanges"
-- name: "search"
-- name: "deprecated"
+- name: "Global"
+- name: "Coins"
+- name: "People"
+- name: "Tags"
+- name: "Tickers"
+- name: "Exchanges"
+- name: "Search"
+- name: "Deprecated"
 
 paths:
   # Global

@@ -4,7 +4,7 @@ exchanges:
     parameters:
       - $ref: "../parameters/exchanges.yml#/quotes"
     tags:
-    - exchanges
+    - Exchanges
     responses:
       200:
         description: "successful operation"
@@ -24,7 +24,7 @@ exchange_by_id:
     - $ref: "../parameters/exchanges.yml#/quotes"
     - $ref: "../parameters/exchanges.yml#/exchange_id"
     tags:
-    - exchanges
+    - Exchanges
     responses:
       200:
         description: "successful operation"
@@ -42,7 +42,7 @@ markets_by_exchange_id:
     - $ref: "../parameters/exchanges.yml#/quotes"
     - $ref: "../parameters/exchanges.yml#/exchange_id"
     tags:
-    - exchanges
+    - Exchanges
     responses:
       200:
         description: "successful operation"

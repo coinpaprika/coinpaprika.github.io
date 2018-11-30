@@ -1,7 +1,7 @@
 ticker_deprecated:
   get:
     tags:
-    - deprecated
+    - Deprecated
     summary: Get ticker information for all coins [DEPRECATED]
     responses:
       200:
@@ -18,7 +18,7 @@ ticker_deprecated:
 ticker_by_coin_id_deprecated:
   get:
     tags:
-    - deprecated
+    - Deprecated
     summary: Get ticker by ID [DEPRECATED]
     parameters:
     - $ref: "../parameters/coins.yml#/coin_id"

@@ -4,7 +4,7 @@ person_by_id:
     parameters:
       - $ref: "../parameters/people.yml#/person_id"
     tags:
-    - people
+    - People
     responses:
       200:
         description: "successful operation"

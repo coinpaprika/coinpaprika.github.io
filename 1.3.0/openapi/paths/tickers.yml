@@ -1,7 +1,7 @@
 tickers:
   get:
     tags:
-      - tickers
+      - Tickers
     summary: Get tickers for all coins
     description: >
       Warning: Values of three fields:
@@ -28,7 +28,7 @@ tickers:
 tickers_by_id:
   get:
     tags:
-      - tickers
+      - Tickers
     summary: Get ticker information for specific coin
     description: >
       Warning: Values of three fields:
@@ -53,7 +53,7 @@ tickers_by_id:
 tickers_historical:
   get:
     tags:
-    - tickers
+    - Tickers
     summary: Get historical tickers for specific coin
     parameters:
         - $ref: "../parameters/coins.yml#/coin_id"

@@ -2,7 +2,7 @@ search:
   get:
     summary: Search tool
     tags:
-    - search
+    - Search
     parameters:
     - $ref: "../parameters/search.yml#/search_query"
     - $ref: "../parameters/search.yml#/search_category"

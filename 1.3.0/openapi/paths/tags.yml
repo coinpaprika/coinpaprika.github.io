@@ -2,7 +2,7 @@ tags:
   get:
     summary: List tags
     tags:
-    - tags
+    - Tags
     parameters:
     - $ref: "../parameters/tags.yml#/additional_fields"
     responses:
@@ -21,7 +21,7 @@ tag_by_id:
   get:
     summary: Get tag by ID
     tags:
-    - tags
+    - Tags
     parameters:
     - $ref: "../parameters/tags.yml#/tag_id"
     - $ref: "../parameters/tags.yml#/additional_fields"

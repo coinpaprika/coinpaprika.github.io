@@ -2,7 +2,7 @@ coins:
   get:
     summary: List coins
     tags:
-    - coins
+    - Coins
     responses:
       200:
         description: "successful operation"
@@ -21,7 +21,7 @@ coin_by_id:
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
     tags:
-    - coins
+    - Coins
     responses:
       200:
         description: "successful operation"
@@ -40,7 +40,7 @@ twitter:
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
     tags:
-    - coins
+    - Coins
     responses:
       200:
         description: "successful operation"
@@ -57,7 +57,7 @@ events:
     parameters:
     - $ref: "../parameters/coins.yml#/coin_id"
     tags:
-    - coins
+    - Coins
     responses:
       200:
         description: "successful operation"
@@ -78,7 +78,7 @@ coins_ohlcv_latest:
       - $ref: "../parameters/coins.yml#/coin_id"
       - $ref: "../parameters/coins.yml#/ohlcv_quote"
     tags:
-    - coins
+    - Coins
     responses:
       200:
         description: "successful operation"
@@ -102,7 +102,7 @@ coins_ohlcv_historical:
       - $ref: "../parameters/coins.yml#/ohlcv_limit"
       - $ref: "../parameters/coins.yml#/ohlcv_quote"
     tags:
-    - coins
+    - Coins
     responses:
       200:
         description: "successful operation"
@@ -121,7 +121,7 @@ exchanges_by_coin_id:
     parameters:
     - $ref: "../parameters/coins.yml#/coin_id"
     tags:
-    - coins
+    - Coins
     responses:
       200:
         description: "successful operation"
@@ -141,7 +141,7 @@ markets_by_coin_id:
     - $ref: "../parameters/coins.yml#/coin_id"
     - $ref: "../parameters/coins.yml#/quotes"
     tags:
-    - coins
+    - Coins
     responses:
       200:
         description: "successful operation"
