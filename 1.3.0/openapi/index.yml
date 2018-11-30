@@ -28,6 +28,8 @@ info:
     * HTTP 5XX return codes are used for internal errors - the issue is on coinpaprika's side
     # Rate limit
     * Single IP address can send less than 10 requests per second
+    # Archival documentations
+    * [API v1.2.1](https://api.coinpaprika.com/docs/1.2.1)
 
 servers:
 - url: https://api.coinpaprika.com/v1
