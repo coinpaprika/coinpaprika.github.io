@@ -19,6 +19,7 @@ event:
     link:
       type: string
       example: "http://www.cmegroup.com/trading/equity-index/us-index/bitcoin_product_calendar_futures.html"
+      nullable: true
     proof_image_link:
       type: string
       example: "https://static.coinpaprika.com/storage/cdn/event_images/16635.jpg"
