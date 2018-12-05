@@ -170,7 +170,7 @@ twitter:
       type: string
       nullable: true
 
-coins_ohlcv_latest:
+coins_ohlcv:
   type: object
   properties:
     time_open:
@@ -205,8 +205,3 @@ coins_ohlcv_latest:
       type: integer
       example: 83808161204
       nullable: true
-
-coins_ohlcv_historical:
-  type: array
-  items:
-    $ref: "coins.yml#/coins_ohlcv_latest"

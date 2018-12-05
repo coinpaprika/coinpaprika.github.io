@@ -87,7 +87,7 @@ coins_ohlcv_latest:
             schema:
               type: array
               items:
-                $ref: "../schemas/coins.yml#/coins_ohlcv_latest"
+                $ref: "../schemas/coins.yml#/coins_ohlcv"
       429:
         description: "too many requests"
 
@@ -111,7 +111,7 @@ coins_ohlcv_historical:
             schema:
               type: array
               items:
-                $ref: "../schemas/coins.yml#/coins_ohlcv_historical"
+                $ref: "../schemas/coins.yml#/coins_ohlcv"
       429:
         description: "too many requests"
 
