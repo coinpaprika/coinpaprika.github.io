@@ -20,6 +20,9 @@ currency:
     is_active:
       type: boolean
       example: true
+    type:
+      type: string
+      example: coin
 
 coin_extended:
   type: object
@@ -47,6 +50,9 @@ coin_extended:
     is_active:
       type: boolean
       example: true
+    type:
+      type: string
+      example: coin
     tags:
       type: array
       items:
