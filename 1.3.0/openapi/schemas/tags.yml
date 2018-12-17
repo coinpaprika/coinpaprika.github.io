@@ -44,3 +44,8 @@ tag:
       items: string
       nullable: true
       example: ["dcr-decred","hc-hypercash","nxs-nexus"]
+    icos:
+      type: array
+      items: string
+      nullable: true
+      example: ["kodakcoin-kodakone","acad-academy"]
