@@ -1,0 +1,155 @@
+coins:
+  get:
+    summary: List coins
+    tags:
+    - Coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/currency"
+      429:
+        description: "too many requests"
+
+coin_by_id:
+  get:
+    summary: Get coin by ID
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - Coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/coins.yml#/coin_extended"
+      429:
+        description: "too many requests"
+
+
+twitter:
+  get:
+    summary: Get twitter timeline for coin
+    description: Not more than last 50 tweets
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - Coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/coins.yml#/twitter"
+      429:
+        description: "too many requests"
+
+events:
+  get:
+    summary: Get coin events by coin ID
+    parameters:
+    - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - Coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/events.yml#/event"
+      429:
+        description: "too many requests"
+
+coins_ohlcv_latest:
+  get:
+    summary: Get latest OHLC
+    description: Open/High/Low/Close values with volume and market_cap
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+      - $ref: "../parameters/coins.yml#/ohlcv_quote"
+    tags:
+    - Coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/coins_ohlcv"
+      429:
+        description: "too many requests"
+
+coins_ohlcv_historical:
+  get:
+    summary: Get historical OHLC
+    description: Open/High/Low/Close values with volume and market_cap
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+      - $ref: "../parameters/coins.yml#/ohlcv_start"
+      - $ref: "../parameters/coins.yml#/ohlcv_end"
+      - $ref: "../parameters/coins.yml#/ohlcv_limit"
+      - $ref: "../parameters/coins.yml#/ohlcv_quote"
+    tags:
+    - Coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/coins_ohlcv"
+      429:
+        description: "too many requests"
+
+exchanges_by_coin_id:
+  get:
+    summary: Get exchanges by coin ID
+    parameters:
+    - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - Coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/exchanges.yml#/exchange_with_share"
+      429:
+        description: "too many requests"
+
+markets_by_coin_id:
+  get:
+    summary: Get markets by coin ID
+    parameters:
+    - $ref: "../parameters/coins.yml#/coin_id"
+    - $ref: "../parameters/coins.yml#/quotes"
+    tags:
+    - Coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/exchanges.yml#/coin_market"
+      429:
+        description: "too many requests"

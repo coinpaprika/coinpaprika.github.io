@@ -1,0 +1,66 @@
+quotes:
+  name: quotes
+  in: query
+  required: false
+  description: >
+    Comma separated list of quotes to return. Currently allowed values: USD, BTC, ETH
+  schema:
+    type: string
+    default: USD
+    example: USD,BTC
+
+historical_start:
+  name: start
+  in: query
+  required: true
+  description: >
+    start point for historical data
+
+    #### Supported formats:
+       - RFC3999 (ISO-8601) eg. `2018-02-15T05:15:00Z`
+       - Simple date (yyyy-mm-dd) eg. `2018-02-15`
+       - Unix timestamp (in seconds) eg. `1518671700`
+  schema:
+    type: string
+
+historical_end:
+  name: end
+  in: query
+  required: false
+  description: >
+    end point for historical data
+
+    #### Supported formats:
+     - RFC3999 (ISO-8601) eg. `2018-02-15T05:15:00Z`
+     - Simple date (yyyy-mm-dd) eg. `2018-02-15`
+     - Unix timestamp (in seconds) eg. `1518671700`
+  schema:
+    type: string
+    default: NOW
+
+historical_limit:
+  name: limit
+  in: query
+  required: false
+  description: "limit of result rows (max `5000`)"
+  schema:
+    type: integer
+    default: 1000
+
+historical_quote:
+  name: quote
+  in: query
+  required: false
+  description: "returned data quote (available values: `usd` `btc`)"
+  schema:
+    type: string
+    default: usd
+
+historical_interval:
+  name: interval
+  in: query
+  required: false
+  description: "returned points interval (available values: `5m` `10m` `15m` `30m` `45m` `1h` `2h` `3h` `6h` `12h` `24h` `1d` `7d` `14d` `30d` `90d` `365d`)"
+  schema:
+    type: string
+    default: 5m
