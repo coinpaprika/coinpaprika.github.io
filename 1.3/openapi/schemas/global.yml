@@ -1,0 +1,18 @@
+global:
+  type: object
+  properties:
+    market_cap_usd:
+      type: number
+      example: 430252937008
+    volume_24h_usd:
+      type: number
+      example: 430252937008
+    bitcoin_dominance_percentage:
+      type: number
+      example: 36.67
+    cryptocurrencies_number:
+      type: integer
+      example: 1587
+    last_updated:
+      type: integer
+      example: 1525089441

@@ -1,0 +1,14 @@
+global:
+  get:
+    summary: Get market overview data
+    tags:
+    - Global
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/global.yml#/global"
+      429:
+        description: "too many requests"

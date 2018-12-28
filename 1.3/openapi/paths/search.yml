@@ -1,0 +1,20 @@
+search:
+  get:
+    summary: Search tool
+    tags:
+    - Search
+    parameters:
+    - $ref: "../parameters/search.yml#/search_query"
+    - $ref: "../parameters/search.yml#/search_category"
+    - $ref: "../parameters/search.yml#/search_limit"
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/search.yml#/search_results"
+      429:
+        description: "too many requests"
+      400:
+        description: "invalid parameters"
