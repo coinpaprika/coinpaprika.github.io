@@ -1,9 +1,0 @@
-whitepaper:
-  type: object
-  properties:
-    link:
-      type: string
-      example: https://static.coinpaprika.com/storage/cdn/whitepapers/215.pdf
-    thumbnail:
-      type: string
-      example: https://static.coinpaprika.com/storage/cdn/whitepapers/217.jpg

@@ -29,7 +29,7 @@ info:
     # Rate limit
     * Single IP address can send less than 10 requests per second
     # Archival documentations
-    * [API v1.2.1](https://api.coinpaprika.com/docs/1.2.1)
+    * [API v1.2.1](https://api.coinpaprika.com/docs/1.2)
 
 servers:
 - url: https://api.coinpaprika.com/v1
