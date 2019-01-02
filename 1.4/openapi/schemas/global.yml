@@ -13,6 +13,18 @@ global:
     cryptocurrencies_number:
       type: integer
       example: 1587
+    market_cap_ath_value:
+      type: number
+      example: 835692000000
+    market_cap_ath_date:
+      type: string
+      example: "2018-01-07T11:17:00Z"
+    volume_24h_ath_value:
+      type: number
+      example: 71990500000
+    volume_24h_ath_date:
+      type: string
+      example: "2018-01-04T17:17:00Z"
     last_updated:
       type: integer
       example: 1525089441
