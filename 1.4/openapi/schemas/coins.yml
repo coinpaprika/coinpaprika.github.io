@@ -206,7 +206,7 @@ twitter:
     media_link:
       type: string
       nullable: true
-    video_link:
+    youtube_link:
       type: string
       nullable: true
 
