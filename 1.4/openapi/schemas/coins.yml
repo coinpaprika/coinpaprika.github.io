@@ -96,6 +96,25 @@ coin_extended:
       nullable: true
     links:
       $ref: "#/coin_links"
+    links_extended:
+      type: array
+      items:
+        $ref: "#/link_extended"
+      example:
+        - url: http://blockchain.com/explorer
+          type: explorer
+        - url: https://www.reddit.com/r/bitcoin
+          type: reddit
+          stats:
+            subscribers: 1009135
+        - url: https://github.com/bitcoin/bitcoin
+          type: source_code
+          stats:
+            contributors: 730
+            stars: 36613
+        - url: https://bitcoin.org/
+          type: website
+      description: Contains all links of the `{coin_id}` coin together with statistics for some of them, e.g. number of twitter followers, reddit subscribers, telegram members or github repository stars and contributors
     whitepaper:
       $ref: "whitepaper.yml#/whitepaper"
 
@@ -150,6 +169,21 @@ coin_links:
       items: string
       example: null
       nullable: true
+
+link_extended:
+  type: object
+  properties:
+    url:
+      type: string
+    type:
+      type: string
+    stats:
+      type: object
+      additionalProperties:
+        type: number
+  required:
+    - url
+    - type
 
 twitter:
   type: object

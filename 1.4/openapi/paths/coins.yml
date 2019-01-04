@@ -47,7 +47,9 @@ twitter:
         content:
           application/json:
             schema:
-              $ref: "../schemas/coins.yml#/twitter"
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/twitter"
       429:
         description: "too many requests"
 
