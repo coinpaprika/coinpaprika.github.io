@@ -25,6 +25,12 @@ global:
     volume_24h_ath_date:
       type: string
       example: "2018-01-04T17:17:00Z"
+    market_cap_change_24h:
+      type: number
+      example: 1.98
+    volume_24h_change_24h:
+      type: number
+      example: 1.98
     last_updated:
       type: integer
       example: 1525089441
