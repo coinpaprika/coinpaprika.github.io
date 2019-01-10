@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 
 info:
-  version: 1.4.4
+  version: 1.4.5
   title: Coinpaprika API
   x-logo:
     url: "https://coinpaprika.com/static/files/d6d3c6e3.svg#greywizard/rock-coin-web/assets/coin/img/cp-logo-beta.svg"

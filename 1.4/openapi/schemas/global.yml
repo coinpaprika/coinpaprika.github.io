@@ -13,6 +13,7 @@ global:
     cryptocurrencies_number:
       type: integer
       example: 1587
+      description: This is number of active cryptocurrencies on our site (active in this case means that we have up-to-date price data for a coin). Total number of our cryptocurrencies is higher and may be obtained via counting elements in /coins endpoint.
     market_cap_ath_value:
       type: number
       example: 835692000000
