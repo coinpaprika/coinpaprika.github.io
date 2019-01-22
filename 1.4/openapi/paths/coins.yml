@@ -96,7 +96,7 @@ coins_ohlcv_latest:
 coins_ohlcv_historical:
   get:
     summary: Get historical OHLC
-    description: Open/High/Low/Close values with volume and market_cap
+    description: "Open/High/Low/Close values with volume and market_cap. Request example:\n https://api.coinpaprika.com/v1/coins/btc-bitcoin/ohlcv/historical?start=2019-01-01&end=2019-01-20"
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
       - $ref: "../parameters/coins.yml#/ohlcv_start"
