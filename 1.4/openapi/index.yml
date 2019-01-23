@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 
 info:
-  version: 1.4.5
+  version: 1.4.6
   title: Coinpaprika API
   x-logo:
     url: "https://coinpaprika.com/static/files/d6d3c6e3.svg#greywizard/rock-coin-web/assets/coin/img/cp-logo-beta.svg"
@@ -74,6 +74,9 @@ paths:
 
   /coins/{coin_id}/ohlcv/historical:
     $ref: "paths/coins.yml#/coins_ohlcv_historical"
+
+  /coins/{coin_id}/ohlcv/today/:
+    $ref: "paths/coins.yml#/coins_ohlcv_today"
 
   # People
   /people/{person_id}:

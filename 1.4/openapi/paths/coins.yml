@@ -74,7 +74,7 @@ events:
 
 coins_ohlcv_latest:
   get:
-    summary: Get latest OHLC
+    summary: Get OHLC for last full day
     description: Open/High/Low/Close values with volume and market_cap
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
@@ -93,10 +93,32 @@ coins_ohlcv_latest:
       429:
         description: "too many requests"
 
+
+coins_ohlcv_today:
+  get:
+    summary: Get today OHLC (can change every each request until actual close of the day at 23:59:59)
+    description: Open/High/Low/Close values with volume and market_cap for today
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+      - $ref: "../parameters/coins.yml#/ohlcv_quote"
+    tags:
+      - Coins
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/coins_ohlcv"
+      429:
+        description: "too many requests"
+
 coins_ohlcv_historical:
   get:
     summary: Get historical OHLC
-    description: "Open/High/Low/Close values with volume and market_cap. Request example:\n https://api.coinpaprika.com/v1/coins/btc-bitcoin/ohlcv/historical?start=2019-01-01&end=2019-01-20"
+    description: "Open/High/Low/Close values with volume and market_cap. Request example:\n https://api.coinpaprika.com/v1/coins/btc-bitcoin/ohlcv/historical?start=2019-01-01&end=2019-01-20\nif the last day is current day it can an change with every request until actual close of the day at 23:59:59"
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
       - $ref: "../parameters/coins.yml#/ohlcv_start"
