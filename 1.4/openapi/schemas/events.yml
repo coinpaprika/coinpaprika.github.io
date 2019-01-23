@@ -1,6 +1,9 @@
 event:
   type: object
   properties:
+    id:
+      type: string
+      example: "17398-cme-april-first-trade"
     date:
       type: string
       example: "2018-04-02T00:00:00Z"
