@@ -195,12 +195,18 @@ twitter:
     user_name:
       type: string
       example: bitcoincoreorg
-    status:
+    user_image_link:
       type: string
+    status:
+      type: string 
       example: Bitcoin Core 0.17.0 Released https://t.co/ciwCREngon
     is_retweet:
       type: boolean
       example: false
+    retweet_count:
+      type: integer
+    like_count:
+      type: integer
     status_link:
       type: string
     media_link:
