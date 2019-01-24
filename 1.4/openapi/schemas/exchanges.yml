@@ -40,6 +40,16 @@ exchange:
     active:
       type: boolean
       example: true
+    website_status:
+      type: boolean
+      example: true
+    api_status:
+      type: boolean
+      example: true
+    description:
+      type: string
+      example: "Binance is a Malta-based cryptocurrency exchange founded in July 2017"
+      nullable: true
     message:
       type: string
       example: "Currently under maintenance"
