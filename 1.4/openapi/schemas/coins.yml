@@ -209,6 +209,8 @@ twitter:
       type: integer
     status_link:
       type: string
+    status_id:
+      type: string
     media_link:
       type: string
       nullable: true
