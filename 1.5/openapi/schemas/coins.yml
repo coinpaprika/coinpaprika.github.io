@@ -1,0 +1,255 @@
+currency:
+  type: object
+  properties:
+    id:
+      type: string
+      example: btc-bitcoin
+    name:
+      type: string
+      example: Bitcoin
+    symbol:
+      type: string
+      example: BTC
+    rank:
+      type: integer
+      example: 1
+    is_new:
+      type: boolean
+      example: false
+      description: If currency was added within last 5 days
+    is_active:
+      type: boolean
+      example: true
+    type:
+      type: string
+      example: coin
+
+coin_extended:
+  type: object
+  properties:
+    id:
+      type: string
+      example: btc-bitcoin
+    name:
+      type: string
+      example: Bitcoin
+    symbol:
+      type: string
+      example: BTC
+    parent:
+      type: "#/coin_parent"
+      example: {"id":"eth-ethereum","name":"Ethereum", "symbol":"ETH"}
+      nullable: true
+    rank:
+      type: integer
+      example: 1
+    is_new:
+      type: boolean
+      example: false
+      description: If currency was added within last 5 days
+    is_active:
+      type: boolean
+      example: true
+    type:
+      type: string
+      example: coin
+    tags:
+      type: array
+      items:
+        $ref: "tags.yml#/tag_simplified"
+    team:
+      type: array
+      items:
+        $ref: "people.yml#/person_with_position"
+    description:
+      type: string
+      example: "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital
+      currency, as the system works without a central bank or single administrator."
+      nullable: true
+    message:
+      type: string
+    open_source:
+      type: boolean
+      example: true
+    hardware_wallet:
+      type: boolean
+      example: true
+    started_at:
+      type: string
+      example: "2009-01-03T00:00:00Z"
+      nullable: true
+    development_status:
+      type: string
+      example: Working product
+      nullable: true
+    proof_type:
+      type: string
+      example: Proof of work
+      nullable: true
+    org_structure:
+      type: string
+      example: Decentralized
+      nullable: true
+    hash_algorithm:
+      type: string
+      example: SHA256
+      nullable: true
+    links:
+      $ref: "#/coin_links"
+    links_extended:
+      type: array
+      items:
+        $ref: "#/link_extended"
+      example:
+        - url: http://blockchain.com/explorer
+          type: explorer
+        - url: https://www.reddit.com/r/bitcoin
+          type: reddit
+          stats:
+            subscribers: 1009135
+        - url: https://github.com/bitcoin/bitcoin
+          type: source_code
+          stats:
+            contributors: 730
+            stars: 36613
+        - url: https://bitcoin.org/
+          type: website
+      description: Contains all links of the `{coin_id}` coin together with statistics for some of them, e.g. number of twitter followers, reddit subscribers, telegram members or github repository stars and contributors
+    whitepaper:
+      $ref: "whitepaper.yml#/whitepaper"
+
+coin_parent:
+  type: object
+  properties:
+    id:
+      type: string
+      example: eth-ethereum
+    name:
+      type: string
+      example: Ethereum
+    symbol:
+      type: string
+      example: ETH
+
+coin_links:
+  type: object
+  properties:
+    explorer:
+      type: array
+      items: string
+      example: ["http://blockchain.com/explorer", "https://blockchair.com/bitcoin/blocks", "https://blockexplorer.com/", "https://live.blockcypher.com/btc/"]
+      nullable: true
+    facebook:
+      type: array
+      items: string
+      example: ["https://www.facebook.com/bitcoins/"]
+      nullable: true
+    reddit:
+      type: array
+      items: string
+      example: ["https://www.reddit.com/r/bitcoin"]
+      nullable: true
+    source_code:
+      type: array
+      items: string
+      example: ["https://github.com/bitcoin/bitcoin"]
+      nullable: true
+    website:
+      type: array
+      items: string
+      example: ["https://bitcoin.org/"]
+      nullable: true
+    youtube:
+      type: array
+      items: string
+      example: ["https://www.youtube.com/watch?v=Um63OQz3bjo"]
+      nullable: true
+    medium:
+      type: array
+      items: string
+      example: null
+      nullable: true
+
+link_extended:
+  type: object
+  properties:
+    url:
+      type: string
+    type:
+      type: string
+    stats:
+      type: object
+      additionalProperties:
+        type: number
+  required:
+    - url
+    - type
+
+twitter:
+  type: object
+  properties:
+    date:
+      type: string
+      description: RFC3999 (ISO-8601) format
+      example: "2018-10-03T11:48:19Z"
+    user_name:
+      type: string
+      example: bitcoincoreorg
+    user_image_link:
+      type: string
+    status:
+      type: string 
+      example: Bitcoin Core 0.17.0 Released https://t.co/ciwCREngon
+    is_retweet:
+      type: boolean
+      example: false
+    retweet_count:
+      type: integer
+    like_count:
+      type: integer
+    status_link:
+      type: string
+    status_id:
+      type: string
+    media_link:
+      type: string
+      nullable: true
+    youtube_link:
+      type: string
+      nullable: true
+
+coins_ohlcv:
+  type: object
+  properties:
+    time_open:
+      type: string
+      description: RFC3999 (ISO-8601) format
+      example: "2018-03-01T00:00:00Z"
+    time_close:
+      type: string
+      description: RFC3999 (ISO-8601) format
+      example: "2018-03-01T23:59:59Z"
+    open:
+      type: number
+      example: 856.012
+      nullable: true
+    high:
+      type: number
+      example: 880.302
+      nullable: true
+    low:
+      type: number
+      example: 851.92
+      nullable: true
+    close:
+      type: number
+      example: 872.2
+      nullable: true
+    volume:
+      type: integer
+      example: 1868520000
+      nullable: true
+    market_cap:
+      type: integer
+      example: 83808161204
+      nullable: true

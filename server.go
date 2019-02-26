@@ -14,7 +14,7 @@ func main() {
 		AllowMethods: []string{"GET"},
 	}))
 
-	e.Static("/docs", "1.4/openapi")
+	e.Static("/docs", "1.5/openapi")
 	e.File("/", "local.html")
 
 	e.Logger.Fatal(e.Start(":1400"))

@@ -1,0 +1,123 @@
+openapi: "3.0.0"
+
+info:
+  version: 1.5.0
+  title: Coinpaprika API
+  x-logo:
+    url: "https://coinpaprika.com/static/files/d6d3c6e3.svg#greywizard/rock-coin-web/assets/coin/img/cp-logo-beta.svg"
+    backgroundColor: "#FFFFFF"
+  description: |
+    Coinpaprika API delivers free & frequently updated market data from the world of crypto: coin prices, volumes, market caps, ATHs, return rates and more.
+    # Clients
+    * [PHP](https://github.com/coinpaprika/coinpaprika-api-php-client)
+    * [NodeJS](https://github.com/coinpaprika/coinpaprika-api-nodejs-client)
+    * [GO](https://github.com/coinpaprika/coinpaprika-api-go-client)
+    * [Swift](https://github.com/coinpaprika/coinpaprika-api-swift-client)
+    * [Kotlin](https://github.com/coinpaprika/coinpaprika-api-kotlin-client)
+    * Community Contributed Clients:
+      * [C#](https://github.com/MSiccDev/CoinpaprikaAPI)
+      * [JS](https://github.com/jaggedsoft/coinpaprika-js)
+    # General
+    * The base endpoint is: https://api.coinpaprika.com/v1/
+    * All endpoints return either a JSON object or array
+    * All timestamp related fields are in seconds
+    # Errors
+    * API errors are formatted as JSON:
+    ```{"error": "<error message>"}```
+    * HTTP 4XX return codes are used for invalid requests - the issue is on the sender's side
+    * HTTP 429 return code is used when breaking a request rate limit
+    * HTTP 5XX return codes are used for internal errors - the issue is on coinpaprika's side
+    # Rate limit
+    * Single IP address can send less than 10 requests per second
+    # Archival documentations
+    * [API v1.2](https://api.coinpaprika.com/docs/1.2)
+    * [API v1.3](https://api.coinpaprika.com/docs/1.3)
+    * [API v1.4](https://api.coinpaprika.com/docs/1.4)
+
+servers:
+- url: https://api.coinpaprika.com/v1
+
+tags:
+- name: "Global" 
+- name: "Coins"
+- name: "People"
+- name: "Tags"
+- name: "Tickers"
+- name: "Exchanges"
+- name: "Tools"
+- name: "Deprecated"
+
+paths:
+  # Global
+  /global:
+    $ref: "paths/global.yml#/global"
+
+  # Coins
+  /coins:
+    $ref: "paths/coins.yml#/coins"
+
+  /coins/{coin_id}:
+    $ref: "paths/coins.yml#/coin_by_id"
+
+  /coins/{coin_id}/twitter:
+    $ref: "paths/coins.yml#/twitter"
+
+  /coins/{coin_id}/events:
+    $ref: "paths/coins.yml#/events"
+
+  /coins/{coin_id}/exchanges:
+    $ref: "paths/coins.yml#/exchanges_by_coin_id"
+
+  /coins/{coin_id}/markets:
+    $ref: "paths/coins.yml#/markets_by_coin_id"
+
+  /coins/{coin_id}/ohlcv/latest/:
+    $ref: "paths/coins.yml#/coins_ohlcv_latest"
+
+  /coins/{coin_id}/ohlcv/historical:
+    $ref: "paths/coins.yml#/coins_ohlcv_historical"
+
+  /coins/{coin_id}/ohlcv/today/:
+    $ref: "paths/coins.yml#/coins_ohlcv_today"
+
+  # People
+  /people/{person_id}:
+    $ref: "paths/people.yml#/person_by_id"
+
+  # Tags
+  /tags:
+    $ref: "paths/tags.yml#/tags"
+  /tags/{tag_id}:
+    $ref: "paths/tags.yml#/tag_by_id"
+
+  # Tickers
+  /tickers:
+    $ref: "paths/tickers.yml#/tickers"
+
+  /tickers/{coin_id}:
+    $ref: "paths/tickers.yml#/tickers_by_id"
+
+  /tickers/{coin_id}/historical:
+    $ref: "paths/tickers.yml#/tickers_historical"
+
+  # Exchanges
+  /exchanges:
+    $ref: "paths/exchanges.yml#/exchanges"
+  /exchanges/{exchange_id}:
+    $ref: "paths/exchanges.yml#/exchange_by_id"
+  /exchanges/{exchange_id}/markets:
+    $ref: "paths/exchanges.yml#/markets_by_exchange_id"
+
+  # Tools
+  /search:
+    $ref: "paths/tools.yml#/search"
+  /price-converter:
+    $ref: "paths/tools.yml#/price_converter"
+
+  # Deprecated
+  /ticker:
+    $ref: "paths/deprecated.yml#/ticker_deprecated"
+
+  /ticker/{coin_id}:
+    $ref: "paths/deprecated.yml#/ticker_by_coin_id_deprecated"
+

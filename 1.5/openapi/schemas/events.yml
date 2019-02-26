@@ -1,0 +1,29 @@
+event:
+  type: object
+  properties:
+    id:
+      type: string
+      example: "17398-cme-april-first-trade"
+    date:
+      type: string
+      example: "2018-04-02T00:00:00Z"
+    date_to:
+      type: string
+      nullable: true
+    name:
+      type: string
+      example: "CME: April First Trade"
+    description:
+      type: string
+      example: "First trade of Bitcoin futures contract for April 2018."
+    is_conference:
+      type: boolean
+      example: false
+    link:
+      type: string
+      example: "http://www.cmegroup.com/trading/equity-index/us-index/bitcoin_product_calendar_futures.html"
+      nullable: true
+    proof_image_link:
+      type: string
+      example: "https://static.coinpaprika.com/storage/cdn/event_images/16635.jpg"
+      nullable: true
