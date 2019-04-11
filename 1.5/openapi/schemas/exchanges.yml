@@ -117,6 +117,22 @@ quote:
     adjusted_volume_24h:
       type: number
       example: 794020873
+    reported_volume_7d:
+      type: number
+      example: 153060819
+      description: 7d reported volume. This value is updated once per day at midnight (UTC). For example, at 2019-04-11 11:00 AM this value is the exchange volume between 2019-04-04 00:00:00 UTC and 2019-04-11 00:00:00 UTC
+    adjusted_volume_7d:
+      type: number
+      example: 153060819
+      description: 7d adjusted volume updated once per day at midnight (UTC). See `reported_volume_7d` description for more details
+    reported_volume_30d:
+      type: number
+      example: 301246828
+      description: 30d reported volume. This value is updated once per day at midnight (UTC). For example, at 2019-04-11 11:00 AM this value is the exchange volume between 2019-03-12 00:00:00 UTC and 2019-04-11 00:00:00 UTC
+    adjusted_volume_30d:
+      type: number
+      example: 301246828
+      description: 30d adjusted volume updated once per day at midnight (UTC). See `reported_volume_30d` description for more details
 
 market:
   type: object

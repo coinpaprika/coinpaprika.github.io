@@ -1,6 +1,7 @@
 exchanges:
   get:
     summary: List exchanges
+    operationId: "getExchanges"
     parameters:
       - $ref: "../parameters/exchanges.yml#/quotes"
     tags:
@@ -20,6 +21,7 @@ exchanges:
 exchange_by_id:
   get:
     summary: Get exchange by ID
+    operationId: "getExchangeByID"
     parameters:
     - $ref: "../parameters/exchanges.yml#/quotes"
     - $ref: "../parameters/exchanges.yml#/exchange_id"
