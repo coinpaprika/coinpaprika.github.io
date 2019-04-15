@@ -1,8 +1,7 @@
 quotes:
   type: object
-  properties:
-    $KEY:
-      $ref: "#/quote"
+  additionalProperties:
+    $ref: "#/quote"
 
 
 quote:
