@@ -56,5 +56,5 @@ tickers_historical:
               $ref: "../schemas/tickers.yml#/historical_ticks"
       429:
         description: "too many requests"
-      500:
+      400:
         description: "invalid parameters"
