@@ -17,6 +17,7 @@ info:
     * Community Contributed Clients:
       * [C#](https://github.com/MSiccDev/CoinpaprikaAPI)
       * [JS](https://github.com/jaggedsoft/coinpaprika-js)
+      * [Python](https://github.com/s0h3ck/coinpaprika-api-python-client)
     # General
     * The base endpoint is: https://api.coinpaprika.com/v1/
     * All endpoints return either a JSON object or array
