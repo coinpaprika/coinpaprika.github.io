@@ -18,6 +18,7 @@ coins:
 coin_by_id:
   get:
     summary: Get coin by ID
+    operationId: "getCoinById"
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
     tags:

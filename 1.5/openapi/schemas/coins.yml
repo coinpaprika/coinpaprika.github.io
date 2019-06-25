@@ -117,6 +117,14 @@ coin_extended:
       description: Contains all links of the `{coin_id}` coin together with statistics for some of them, e.g. number of twitter followers, reddit subscribers, telegram members or github repository stars and contributors
     whitepaper:
       $ref: "whitepaper.yml#/whitepaper"
+    first_data_at:
+      type: string
+      description: first available ticker data for given coin. RFC3999 (ISO-8601) format
+      example: "2018-10-03T11:48:19Z"
+    last_data_at:
+      type: string
+      description: last available ticker data for given coin. RFC3999 (ISO-8601) format
+      example: "2019-05-03T11:00:00"
 
 coin_parent:
   type: object
