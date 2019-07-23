@@ -43,7 +43,7 @@ person_by_id:
       description: "Number of teams where person is a member"
     links:
       $ref: "#/person_links"
-    postions:
+    positions:
       type: array
       items:
         $ref: "#/coin_and_position"

@@ -1,6 +1,7 @@
 person_by_id:
   get:
     summary: Get people by ID
+    operationId: "getPeopleById"
     parameters:
       - $ref: "../parameters/people.yml#/person_id"
     tags:
