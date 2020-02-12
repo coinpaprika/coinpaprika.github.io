@@ -40,6 +40,7 @@ coin_extended:
       type: "#/coin_parent"
       example: {"id":"eth-ethereum","name":"Ethereum", "symbol":"ETH"}
       nullable: true
+      description: "This field is deprecated. Use `contracts` field instead"
     rank:
       type: integer
       example: 1
@@ -94,6 +95,18 @@ coin_extended:
       type: string
       example: SHA256
       nullable: true
+    contract:
+      type: string
+      nullable: true  
+      description: "This field is deprecated. Use `contracts` field instead" 
+    platform:
+      type: string
+      nullable: true  
+      description: "This field is deprecated. Use `contracts` field instead"
+    contracts:
+      type: array
+      items:
+        $ref: "#/contract"
     links:
       $ref: "#/coin_links"
     links_extended:
@@ -138,6 +151,20 @@ coin_parent:
     symbol:
       type: string
       example: ETH
+
+contract:
+  type: object
+  properties:
+    contract:
+      type: string
+    platform:
+      type: string
+    type:
+      type: string
+  required:
+    - contract
+    - platform
+    - type
 
 coin_links:
   type: object
