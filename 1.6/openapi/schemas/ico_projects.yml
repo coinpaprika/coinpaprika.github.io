@@ -1,0 +1,15 @@
+ico_project:
+  type: object
+  properties:
+    id:
+      type: string
+      example: fil-filecoin-futures
+    name:
+      type: string
+      example: Filecoin
+    symbol:
+      type: string
+      example: FIL
+    is_new:
+      type: boolean
+      example: false

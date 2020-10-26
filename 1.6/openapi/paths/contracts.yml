@@ -1,0 +1,52 @@
+platforms:
+  get:
+    summary: List contracts platforms
+    operationId: "getPlatforms"
+    tags:
+    - Contracts
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/contracts.yml#/platform"
+      429:
+        description: "too many requests"
+
+contracts_by_platform:
+  get:
+    summary: Get all contract addressess for platform
+    operationId: "getContracts"
+    parameters:
+    - $ref: "../parameters/contracts.yml#/platform_id"
+    tags:
+    - Contracts
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/contracts.yml#/contract"
+      429:
+        description: "too many requests"
+
+ticker_redirect:
+  get:
+    summary: Redirect to Ticker by contract address
+    operationId: "getTicker"
+    parameters:
+    - $ref: "../parameters/contracts.yml#/platform_id"
+    - $ref: "../parameters/contracts.yml#/contract_address"
+    tags:
+    - Contracts
+    responses:
+      301:
+        description: "successful redirect"
+      429:
+        description: "too many requests"
