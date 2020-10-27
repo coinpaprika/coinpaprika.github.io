@@ -1,0 +1,51 @@
+search_results:
+  type: object
+  properties:
+    currencies:
+      type: array
+      items:
+        $ref: "coins.yml#/currency"
+    icos:
+      type: array
+      items:
+        $ref: "ico_projects.yml#/ico_project"
+    exchanges:
+      type: array
+      items:
+        $ref: "exchanges.yml#/exchange_simplified"
+    people:
+      type: array
+      items:
+        $ref: "people.yml#/person"
+    tags:
+      type: array
+      items:
+        $ref: "tags.yml#/tag_simplified"
+
+price_converter_response:
+  type: object
+  properties:
+    base_currency_id:
+      type: string
+      example: "btc-bitcoin"
+    base_currency_name:
+      type: string
+      example: "Bitcoin"
+    base_price_last_updated:
+      type: string
+      example: "2019-02-26T13:32:39Z"
+    quote_currency_id:
+      type: string
+      example: "usd-us-dollars"
+    quote_currency_name:
+      type: string
+      example: "US Dollars"
+    quote_price_last_updated:
+      type: string
+      example: "2019-02-26T13:33:45Z"
+    amount:
+      type: number
+      example: 100
+    price:
+      type: number
+      example: 386621.99158499995

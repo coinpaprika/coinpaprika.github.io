@@ -1,0 +1,16 @@
+tag_id:
+  name: tag_id
+  in: path
+  required: true
+  schema:
+    type: string
+    example: blockchain-service
+additional_fields:
+  name: additional_fields
+  description: >
+    Comma separated list of additional fields to include in query result for each tag. Currently supported values are: "coins" and "icos".
+  in: query
+  required: false
+  schema:
+    type: string
+    example: coins,icos

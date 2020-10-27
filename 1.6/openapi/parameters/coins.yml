@@ -1,0 +1,68 @@
+coin_id:
+  name: coin_id
+  in: path
+  required: true
+  schema:
+    type: string
+    example: btc-bitcoin
+
+quotes:
+  name: quotes
+  in: query
+  required: false
+  description: >
+    Comma separated list of quotes to return. Currently allowed values:  BTC, ETH, USD, EUR, PLN, KRW, GBP, CAD, JPY, RUB, TRY, NZD, AUD, CHF, UAH, HKD, SGD, NGN, PHP, MXN, BRL, THB, CLP, CNY, CZK, DKK, HUF, IDR, ILS, INR, MYR, NOK, PKR, SEK, TWD, ZAR, VND, BOB, COP, PEN, ARS, ISK
+  schema:
+    type: string
+    default: USD
+    example: USD,BTC
+
+
+ohlcv_start:
+  name: start
+  in: query
+  required: true
+  description: >
+    start point for historical data
+
+    #### Supported formats:
+       - RFC3999 (ISO-8601) eg. `2018-02-15T05:15:00Z`
+       - Simple date (yyyy-mm-dd) eg. `2018-02-15`
+       - Unix timestamp (in seconds) eg. `1518671700`
+  schema:
+    type: string
+
+ohlcv_end:
+  name: end
+  in: query
+  required: false
+  description: >
+    end point for ohlcv (max 1 year)
+
+    #### Supported formats:
+       - RFC3999 (ISO-8601) eg. `2018-02-15T05:15:00Z`
+       - Simple date (yyyy-mm-dd) eg. `2018-02-15`
+       - Unix timestamp (in seconds) eg. `1518671700`
+
+     If not provided calculated by the limit parameter
+  schema:
+    type: string
+
+ohlcv_limit:
+  name: limit
+  in: query
+  required: false
+  description: "limit of result rows (max `366`)"
+  schema:
+    type: integer
+    default: 1
+
+ohlcv_quote:
+  name: quote
+  in: query
+  required: false
+  description: "returned data quote (available values: `usd` `btc`)"
+  schema:
+    type: string
+    default: usd
+

@@ -1,0 +1,49 @@
+tick_deprecated:
+  type: object
+  description: Tick response. Missing values are returned as empty string
+  properties:
+    id:
+      type: string
+      example: btc-bitcoin
+    name:
+      type: string
+      example: Bitcoin
+    symbol:
+      type: string
+      example: BTC
+    rank:
+      type: string
+      example: "1"
+    price_usd:
+      type: string
+      example: "9259.01"
+    price_btc:
+      type: string
+      example: "1"
+    volume_24h_usd:
+      type: string
+      example: "8102619999"
+    market_cap_usd:
+      type: string
+      example: "157468557128"
+    circulating_supply:
+      type: string
+      example: "17007062"
+    total_supply:
+      type: string
+      example: "17007062"
+    max_supply:
+      type: string
+      example: "21000000"
+    percent_change_1h:
+      type: string
+      example: "-0.26"
+    percent_change_24h:
+      type: string
+      example: "0.22"
+    percent_change_7d:
+      type: string
+      example: "4.1"
+    last_updated:
+      type: string
+      example: "1525088839"

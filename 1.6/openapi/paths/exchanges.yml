@@ -1,0 +1,58 @@
+exchanges:
+  get:
+    summary: List exchanges
+    operationId: "getExchanges"
+    parameters:
+      - $ref: "../parameters/exchanges.yml#/quotes"
+    tags:
+    - Exchanges
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/exchanges.yml#/exchange"
+      429:
+        description: "too many requests"
+
+exchange_by_id:
+  get:
+    summary: Get exchange by ID
+    operationId: "getExchangeByID"
+    parameters:
+    - $ref: "../parameters/exchanges.yml#/quotes"
+    - $ref: "../parameters/exchanges.yml#/exchange_id"
+    tags:
+    - Exchanges
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/exchanges.yml#/exchange"
+      429:
+        description: "too many requests"
+
+markets_by_exchange_id:
+  get:
+    summary: List markets by exchange ID
+    parameters:
+    - $ref: "../parameters/exchanges.yml#/quotes"
+    - $ref: "../parameters/exchanges.yml#/exchange_id"
+    tags:
+    - Exchanges
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/exchanges.yml#/market"
+      429:
+        description: "too many requests"
