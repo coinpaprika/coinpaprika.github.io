@@ -22,6 +22,8 @@ info:
     * The base endpoint is: https://api.coinpaprika.com/v1/
     * All endpoints return either a JSON object or array
     * All timestamp related fields are in seconds
+    # Terms of use
+    * [Download terms of use](https://coinpaprika.github.io/files/terms_of_use_v1.pdf)
     # Errors
     * API errors are formatted as JSON:
     ```{"error": "<error message>"}```
