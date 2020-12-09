@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 
 info:
-  version: 1.6.0
+  version: 1.6.1
   title: Coinpaprika API
   x-logo:
     url: "https://coinpaprika.com/static/files/df51e301.png#greywizard/rock-coin-web/assets/img/cp_logo-transparent.png"
@@ -36,6 +36,9 @@ info:
     * [API v1.4](https://api.coinpaprika.com/docs/1.4)
     * [API v1.5](https://api.coinpaprika.com/docs/1.5)
     # Version history
+    ## v1.6.1 - 2020.12.09
+    * Added information about first date with price data for currency ticker [/tickers](#operation/getTickers) and [/tickers/{coin_id}](#operation/getTickersById)
+    * Added redirect for historical tickers by contract address [/contracts/{platform_id}/{contract_address}/historical](#operation/getHistoricalTicker)
     ## v1.6.0 - 2020.10.27
     * Added contracts section [/contracts](#operation/getPlatforms), [/contracts/{platform_id}](#operation/getContracts),
     [/contracts/{platform_id}/{contract_address}](#operation/getTicker)
@@ -122,6 +125,8 @@ paths:
     $ref: "paths/contracts.yml#/contracts_by_platform"
   /contracts/{platform_id}/{contract_address}:
     $ref: "paths/contracts.yml#/ticker_redirect"
+  /contracts/{platform_id}/{contract_address}/historical:
+    $ref: "paths/contracts.yml#/ticker_historical_redirect"
 
   # Tools
   /search:

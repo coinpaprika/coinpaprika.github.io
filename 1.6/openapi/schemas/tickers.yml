@@ -116,6 +116,9 @@ tick:
     beta_value:
       type: number
       example: 0.735327
+    first_data_at:
+      type: string
+      example: "2010-11-14T07:20:41Z"
     last_updated:
       type: string
       example: "2018-11-14T07:20:41Z"

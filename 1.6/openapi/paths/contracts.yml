@@ -50,3 +50,23 @@ ticker_redirect:
         description: "successful redirect"
       429:
         description: "too many requests"
+
+ticker_historical_redirect:
+  get:
+    summary: Redirect to Ticker historical values by contract address
+    operationId: "getHistoricalTicker"
+    parameters:
+      - $ref: "../parameters/contracts.yml#/platform_id"
+      - $ref: "../parameters/contracts.yml#/contract_address"
+      - $ref: "../parameters/tickers.yml#/historical_start"
+      - $ref: "../parameters/tickers.yml#/historical_end"
+      - $ref: "../parameters/tickers.yml#/historical_limit"
+      - $ref: "../parameters/tickers.yml#/historical_quote"
+      - $ref: "../parameters/tickers.yml#/historical_interval"
+    tags:
+      - Contracts
+    responses:
+      301:
+        description: "successful redirect"
+      429:
+        description: "too many requests"
