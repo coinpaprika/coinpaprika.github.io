@@ -1,0 +1,97 @@
+person:
+  type: object
+  properties:
+    id:
+      type: string
+      example: vitalik-buterin
+    name:
+      type: string
+      example: Vitalik Buterin
+    teams_count:
+      type: integer
+      example: 5
+      description: "Number of teams where person is a member"
+
+person_with_position:
+  type: object
+  properties:
+    id:
+      type: string
+      example: vitalik-buterin
+    name:
+      type: string
+      example: Vitalik Buterin
+    position:
+      type: string
+      example: Author
+
+person_by_id:
+  type: object
+  properties:
+    id:
+      type: string
+      example: vitalik-buterin
+    name:
+      type: string
+      example: Vitalik Buterin
+    description:
+      type: string
+      example: Vitalik is the creator of Ethereum. He first discovered blockchain and cryptocurrency technologies through Bitcoin in 2011, and was immediately excited by the technology and its potential. He cofounded Bitcoin Magazine in September 2011, and after two and a half years looking at what the existing blockchain technology and applications had to offer, wrote the Ethereum white paper in November 2013. He now leads Ethereum's research team, working on future versions of the Ethereum protocol.
+    teams_count:
+      type: integer
+      example: 5
+      description: "Number of teams where person is a member"
+    links:
+      $ref: "#/person_links"
+    positions:
+      type: array
+      items:
+        $ref: "#/coin_and_position"
+
+person_links:
+  type: object
+  properties:
+    github:
+      type: array
+      items:
+        $ref: "#/link_with_followers"
+    linkedin:
+      type: array
+      items:
+        $ref: "#/link_with_followers"
+    medium:
+      type: array
+      items:
+        $ref: "#/link_with_followers"
+    twitter:
+      type: array
+      items:
+        $ref: "#/link_with_followers"
+    additional:
+      type: array
+      items:
+        $ref: "#/link_with_followers"
+
+link_with_followers:
+  type: object
+  properties:
+    url:
+      type: string
+      example: http://example.com
+    followers:
+      type: integer
+      example: 6448
+
+coin_and_position:
+  type: object
+  properties:
+    coin_id:
+      type: string
+      example: eth-ethereum
+    coin_name:
+      type: string
+      example: Ethereum
+    position:
+      type: string
+      example: Author
+

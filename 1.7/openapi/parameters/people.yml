@@ -1,0 +1,7 @@
+person_id:
+  name: person_id
+  in: path
+  required: true
+  schema:
+    type: string
+    example: vitalik-buterin

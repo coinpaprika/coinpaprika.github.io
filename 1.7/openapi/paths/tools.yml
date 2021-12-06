@@ -1,0 +1,42 @@
+search:
+  get:
+    summary: Search
+    tags:
+    - Tools
+    parameters:
+    - $ref: "../parameters/tools.yml#/search_query"
+    - $ref: "../parameters/tools.yml#/search_category"
+    - $ref: "../parameters/tools.yml#/search_modifier"
+    - $ref: "../parameters/tools.yml#/search_limit"
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/tools.yml#/search_results"
+      429:
+        description: "too many requests"
+      400:
+        description: "invalid parameters"
+
+price_converter:
+  get:
+    summary: Price converter
+    tags:
+      - Tools
+    parameters:
+      - $ref: "../parameters/tools.yml#/converter_base_currency_id"
+      - $ref: "../parameters/tools.yml#/converter_quote_currency_id"
+      - $ref: "../parameters/tools.yml#/converter_amount"
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/tools.yml#/price_converter_response"
+      429:
+        description: "too many requests"
+      400:
+        description: "invalid parameters"

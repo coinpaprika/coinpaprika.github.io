@@ -1,0 +1,33 @@
+ticker_deprecated:
+  get:
+    tags:
+    - Deprecated
+    summary: Get ticker information for all coins [DEPRECATED]
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/deprecated.yml#/tick_deprecated"
+      429:
+        description: "too many requests"
+
+ticker_by_coin_id_deprecated:
+  get:
+    tags:
+    - Deprecated
+    summary: Get ticker by ID [DEPRECATED]
+    parameters:
+    - $ref: "../parameters/coins.yml#/coin_id"
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/deprecated.yml#/tick_deprecated"
+      429:
+        description: "too many requests"
