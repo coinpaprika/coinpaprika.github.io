@@ -4,25 +4,31 @@ currency:
     id:
       type: string
       example: btc-bitcoin
+      description: ID of coin on coinpaprika.com
     name:
       type: string
       example: Bitcoin
+      description: Name of the cryptocurrency
     symbol:
       type: string
       example: BTC
+      description: Symbol of the cryptocurrency
     rank:
       type: integer
       example: 1
+      description: Current ranking of the cryptocurrency. If `is_active` is false the `rank` is 0
     is_new:
       type: boolean
       example: false
-      description: If currency was added within last 5 days
+      description: Flag indicating if the currency was added within the last 5 days
     is_active:
       type: boolean
       example: true
+      description: Flag indicating if the currency is active, which means that we can calculate the current price and volume
     type:
       type: string
       example: coin
+      description: Type of the cryptocurrency. Currently supported values are `coin` and `token`
 
 coin_extended:
   type: object
