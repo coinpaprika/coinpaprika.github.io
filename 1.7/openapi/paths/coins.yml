@@ -43,11 +43,27 @@ coins:
 coin_by_id:
   get:
     summary: Get coin by ID
+    description: |
+      Returns detailed descriptive information about a single coin, without price or volume data. For price data, check the [/tickers](#operation/getTickers) and [/tickers/{coin_id}](#operation/getTickersById) endpoints.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
     operationId: "getCoinById"
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
     tags:
     - Coins
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/coins/btc-bitcoin'
     responses:
       200:
         description: "successful operation"
@@ -55,8 +71,18 @@ coin_by_id:
           application/json:
             schema:
               $ref: "../schemas/coins.yml#/coin_extended"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
       429:
         description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
 
 
 twitter:

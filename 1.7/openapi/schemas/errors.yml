@@ -5,3 +5,11 @@ tooManyRequestsError:
       type: string
       example: you have reached maximum request limit
       description: Error description
+
+idNotFoundError:
+  type: object
+  properties:
+    error:
+      type: string
+      example: id not found
+      description: ID not found error message

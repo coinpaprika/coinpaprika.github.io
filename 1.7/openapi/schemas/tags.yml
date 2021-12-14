@@ -4,17 +4,19 @@ tag_simplified:
     id:
       type: string
       example: blockchain-service
+      description: ID of the tag
     name:
       type: string
       example: Blockchain Service
+      description: Name of the tag
     coin_counter:
       type: integer
       example: 160
-      description: "Number of currencies with this tag"
+      description: "Number of coins with this tag"
     ico_counter:
       type: integer
       example: 80
-      description: "Number of ic projects with this tag"
+      description: "Number of ico projects with this tag"
 
 tag:
   type: object
@@ -22,13 +24,15 @@ tag:
     id:
       type: string
       example: blockchain-service
+      description: ID of the tag
     name:
       type: string
       example: Blockchain Service
+      description: Name of the tag
     coin_counter:
       type: integer
       example: 160
-      description: "Number of currencies with this tag"
+      description: "Number of coins with this tag"
     ico_counter:
       type: integer
       example: 80

@@ -36,12 +36,15 @@ coin_extended:
     id:
       type: string
       example: btc-bitcoin
+      description: ID of coin on coinpaprika.com
     name:
       type: string
       example: Bitcoin
+      description: Name of the cryptocurrency
     symbol:
       type: string
       example: BTC
+      description: Symbol of the cryptocurrency
     parent:
       type: "#/coin_parent"
       example: {"id":"eth-ethereum","name":"Ethereum", "symbol":"ETH"}
@@ -50,57 +53,71 @@ coin_extended:
     rank:
       type: integer
       example: 1
+      description: Current coin ranking position on coinpaprika.com
     is_new:
       type: boolean
       example: false
-      description: If currency was added within last 5 days
+      description: Flag indicating if the currency was added within the last 5 days
     is_active:
       type: boolean
       example: true
+      description: Flag indicating if the currency is active, which means that we can calculate the current price and volume
     type:
       type: string
       example: coin
+      description: Type of the cryptocurrency. Currently supported values are `coin` and `token`
     tags:
       type: array
       items:
         $ref: "tags.yml#/tag_simplified"
+      description: "The array of tags to which this coin was assigned on coinpaprika.com"
     team:
       type: array
       items:
         $ref: "people.yml#/person_with_position"
+      description: "The cryptocurrency founding and/or developing team"
     description:
       type: string
       example: "Bitcoin is a cryptocurrency and worldwide payment system. It is the first decentralized digital
       currency, as the system works without a central bank or single administrator."
       nullable: true
+      description: "Text description of the cryptocurrency"
     message:
       type: string
+      description: "An important message about current status of the cryptocurrency"
     open_source:
       type: boolean
       example: true
+      description: Set to true if the cryptocurrency is Open Source project
     hardware_wallet:
       type: boolean
       example: true
+      description: Set to true if the cryptocurrency is supported by any hardware wallet
     started_at:
       type: string
       example: "2009-01-03T00:00:00Z"
       nullable: true
+      description: "Launch date of the cryptocurrency"
     development_status:
       type: string
       example: Working product
       nullable: true
+      description: Development status of the cryptocurrency - if it is a working project, beta version, just an idea, etc.
     proof_type:
       type: string
       example: Proof of work
       nullable: true
+      description: "Cryptocurrency proof type: Proof of Work, Proof of Stake, etc."
     org_structure:
       type: string
       example: Decentralized
       nullable: true
+      description: "The cryptocurrency organization structure: centralized, decentralized, hierarchical, flat, etc."
     hash_algorithm:
       type: string
       example: SHA256
       nullable: true
+      description: Name of the hash algorithm used by the cryptocurrency
     contract:
       type: string
       nullable: true  
@@ -138,11 +155,11 @@ coin_extended:
       $ref: "whitepaper.yml#/whitepaper"
     first_data_at:
       type: string
-      description: first available ticker data for given coin. RFC3999 (ISO-8601) format
+      description: Date of the first available ticker data for the coin. RFC3999 (ISO-8601) format
       example: "2018-10-03T11:48:19Z"
     last_data_at:
       type: string
-      description: last available ticker data for given coin. RFC3999 (ISO-8601) format
+      description: Date of the last available ticker data for the coin. RFC3999 (ISO-8601) format
       example: "2019-05-03T11:00:00"
 
 coin_parent:
@@ -163,10 +180,13 @@ contract:
   properties:
     contract:
       type: string
+      description: The contract identifier, which is usually its address
     platform:
       type: string
+      description: "ID of the contract platform. For Ethereum contracts it is `eth-ethereum`, for Tron `trx-tron`, etc."
     type:
       type: string
+      description: "Type of the contract. Currently supported values are: `ERC20`, `BEP2`, `TRC10`, `TRC20`, `Stellar Asset`, `Other`"
   required:
     - contract
     - platform
@@ -180,48 +200,58 @@ coin_links:
       items: string
       example: ["http://blockchain.com/explorer", "https://blockchair.com/bitcoin/blocks", "https://blockexplorer.com/", "https://live.blockcypher.com/btc/"]
       nullable: true
+      description: "List of links to blockchain explorers, if any"
     facebook:
       type: array
       items: string
       example: ["https://www.facebook.com/bitcoins/"]
       nullable: true
+      description: "List of links to Facebook pages of the cryptocurrency, if any"
     reddit:
       type: array
       items: string
       example: ["https://www.reddit.com/r/bitcoin"]
       nullable: true
+      description: List of links to Reddit communities and profiles, if any
     source_code:
       type: array
       items: string
       example: ["https://github.com/bitcoin/bitcoin"]
       nullable: true
+      description: List of links to source code repositories, if any
     website:
       type: array
       items: string
       example: ["https://bitcoin.org/"]
       nullable: true
+      description: List of the cryptocurrency websites, if any
     youtube:
       type: array
       items: string
       example: ["https://www.youtube.com/watch?v=Um63OQz3bjo"]
       nullable: true
+      description: List of links to Youtube channels of the cryptocurrency, if any
     medium:
       type: array
       items: string
       example: null
       nullable: true
+      description: List of links to Medium profiles of the cryptocurrency, if any
 
 link_extended:
   type: object
   properties:
     url:
       type: string
+      description: The link URL
     type:
       type: string
+      description: "Type of the link: `website`, `reddit`, `source_code`, etc."
     stats:
       type: object
       additionalProperties:
         type: number
+      description: An object containing the link stats like `subscribers` (for reddit), `followers` (for twitter), `members` (for telegram), `stars`, `contributors` (for source code)
   required:
     - url
     - type
