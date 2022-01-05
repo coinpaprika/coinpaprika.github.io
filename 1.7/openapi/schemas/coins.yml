@@ -261,32 +261,42 @@ twitter:
   properties:
     date:
       type: string
-      description: RFC3999 (ISO-8601) format
+      description: Publish date of the tweet. RFC3999 (ISO-8601) format
       example: "2018-10-03T11:48:19Z"
     user_name:
       type: string
+      description: Twitter profile user name
       example: bitcoincoreorg
     user_image_link:
       type: string
+      description: Twitter profile user image URL
     status:
       type: string 
+      description: Tweet content
       example: Bitcoin Core 0.17.0 Released https://t.co/ciwCREngon
     is_retweet:
       type: boolean
+      description: Flag indicating whether it is a retweet of someone else's tweet
       example: false
     retweet_count:
       type: integer
+      description: Number of retweets of this tweet
     like_count:
       type: integer
+      description: Number of likes of this tweet
     status_link:
       type: string
+      description: Tweet URL
     status_id:
       type: string
+      description: Tweet ID
     media_link:
       type: string
+      descripiton: "Link to this tweet media: image, video, etc."
       nullable: true
     youtube_link:
       type: string
+      description: "Link to Youtube video shared in this tweet"
       nullable: true
 
 coins_ohlcv:
