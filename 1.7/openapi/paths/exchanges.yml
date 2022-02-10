@@ -6,6 +6,28 @@ exchanges:
       - $ref: "../parameters/exchanges.yml#/quotes"
     tags:
     - Exchanges
+    description: |
+      Returns basic information about exchanges on coinpaprika.com:
+      * identity (`id`, `name`)
+      * ranking
+      * activity status
+      * number of currencies, markets
+      * volumes
+      * etc.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/exchanges'
     responses:
       200:
         description: "successful operation"
@@ -17,6 +39,10 @@ exchanges:
                 $ref: "../schemas/exchanges.yml#/exchange"
       429:
         description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
 
 exchange_by_id:
   get:
@@ -27,6 +53,28 @@ exchange_by_id:
     - $ref: "../parameters/exchanges.yml#/exchange_id"
     tags:
     - Exchanges
+    description: |
+      Returns basic information about a given exchange on coinpaprika.com:
+      * identity (`id`, `name`)
+      * ranking
+      * activity status
+      * number of currencies, markets
+      * volumes
+      * etc.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/exchanges/binance'
     responses:
       200:
         description: "successful operation"
@@ -34,17 +82,48 @@ exchange_by_id:
           application/json:
             schema:
               $ref: "../schemas/exchanges.yml#/exchange"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
       429:
         description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
 
 markets_by_exchange_id:
   get:
-    summary: List markets by exchange ID
+    summary: List an exchange markets
     parameters:
     - $ref: "../parameters/exchanges.yml#/quotes"
     - $ref: "../parameters/exchanges.yml#/exchange_id"
     tags:
     - Exchanges
+    description: |
+      Returns list of all available markets on a given exchange on coinpaprika.com:
+      * base, quote coin names/symbols, market url
+      * market type
+      * activity and outlier status
+      * price and volume
+      * etc.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/exchanges/binance/markets'
     responses:
       200:
         description: "successful operation"
@@ -54,5 +133,15 @@ markets_by_exchange_id:
               type: array
               items:
                 $ref: "../schemas/exchanges.yml#/market"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
       429:
         description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"

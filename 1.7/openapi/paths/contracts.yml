@@ -1,6 +1,22 @@
 platforms:
   get:
     summary: List contracts platforms
+    description: |
+      Returns all available contract platforms on coinpaprika.com.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/contracts'
     operationId: "getPlatforms"
     tags:
     - Contracts
@@ -15,10 +31,30 @@ platforms:
                 $ref: "../schemas/contracts.yml#/platform"
       429:
         description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
 
 contracts_by_platform:
   get:
-    summary: Get all contract addressess for platform
+    summary: Get all contract addressess for a given platform
+    description: |
+      Returns all available contracts for a given platform on coinpaprika.com.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/contracts/eth-ethereum'
     operationId: "getContracts"
     parameters:
     - $ref: "../parameters/contracts.yml#/platform_id"
@@ -35,10 +71,30 @@ contracts_by_platform:
                 $ref: "../schemas/contracts.yml#/contract"
       429:
         description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
 
 ticker_redirect:
   get:
     summary: Redirect to Ticker by contract address
+    description: |
+      Returns [ticker](#operation/getTickersById) data for a contract with a given address.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/contracts/eth-ethereum/0xd26114cd6ee289accf82350c8d8487fedb8a0c07'
     operationId: "getTicker"
     parameters:
     - $ref: "../parameters/contracts.yml#/platform_id"
@@ -50,10 +106,26 @@ ticker_redirect:
         description: "successful redirect"
       429:
         description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
 
 ticker_historical_redirect:
   get:
-    summary: Redirect to Ticker historical values by contract address
+    summary: Redirect to historical ticks by contract address
+    description: |
+      Returns [historical ticks](#operation/getTickersHistoricalById) for a contract with a given address.
+     
+      **Check [historical ticks endpoint documentation](#operation/getTickersHistoricalById) to find out about the limitations for each API plan.**
+
+      **Update interval:** Every 1 minute.
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/contracts/eth-ethereum/0xd26114cd6ee289accf82350c8d8487fedb8a0c07/historical?start=2019-01-01&interval=1d'
     operationId: "getHistoricalTicker"
     parameters:
       - $ref: "../parameters/contracts.yml#/platform_id"
@@ -70,3 +142,7 @@ ticker_historical_redirect:
         description: "successful redirect"
       429:
         description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
