@@ -83,7 +83,7 @@ info:
     * [API v1.5](https://api.coinpaprika.com/docs/1.5)
     * [API v1.6](https://api.coinpaprika.com/docs/1.6)
     # Version history
-    ## v1.7.0 - TODO
+    ## v1.7.0 - 2022.05.06
     * API-Pro documentation
     ## v1.6.1 - 2020.12.09
     * Added information about first date with price data for currency ticker [/tickers](#operation/getTickers) and [/tickers/{coin_id}](#operation/getTickersById)
