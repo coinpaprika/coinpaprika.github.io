@@ -1,0 +1,55 @@
+tag_simplified:
+  type: object
+  properties:
+    id:
+      type: string
+      example: blockchain-service
+      description: ID of the tag
+    name:
+      type: string
+      example: Blockchain Service
+      description: Name of the tag
+    coin_counter:
+      type: integer
+      example: 160
+      description: "Number of coins with this tag"
+    ico_counter:
+      type: integer
+      example: 80
+      description: "Number of ico projects with this tag"
+
+tag:
+  type: object
+  properties:
+    id:
+      type: string
+      example: blockchain-service
+      description: ID of the tag
+    name:
+      type: string
+      example: Blockchain Service
+      description: Name of the tag
+    coin_counter:
+      type: integer
+      example: 160
+      description: "Number of coins with this tag"
+    ico_counter:
+      type: integer
+      example: 80
+      description: "Number of ico projects with this tag"
+    description:
+      type: string
+      example: "A solution for companies wanting to build, host and use their own blockchain apps, smart contracts and functions on the blockchain."
+    type:
+      type: string
+      example: functional
+    coins:
+      type: array
+      items: string
+      nullable: true
+      example: ["dcr-decred","hc-hypercash","nxs-nexus"]
+    icos:
+      type: array
+      items: string
+      nullable: true
+      example: ["kodakcoin-kodakone","acad-academy"]

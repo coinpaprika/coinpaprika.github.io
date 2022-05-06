@@ -1,0 +1,150 @@
+quotes:
+  type: object
+  additionalProperties:
+    $ref: "#/quote"
+  example:
+    "BTC": {
+      "price": 1,
+      "volume_24h": 1414951.9739396,
+      "volume_24h_change_24h": -4.03,
+      "market_cap": 17646575,
+      "market_cap_change_24h": 0.01,
+      "percent_change_15m": 0,
+      "percent_change_30m": 0,
+      "percent_change_1h": 0,
+      "percent_change_6h": 0,
+      "percent_change_12h": 0,
+      "percent_change_24h": 0,
+      "percent_change_7d": 0,
+      "percent_change_30d": 0,
+      "percent_change_1y": 0,
+      "ath_price": null,
+      "ath_date": null,
+      "percent_from_price_ath": null
+    }
+    "USD": {
+      "price": 5162.15941296,
+      "volume_24h": 7304207651.1585,
+      "volume_24h_change_24h": -2.5,
+      "market_cap": 91094433242,
+      "market_cap_change_24h": 1.6,
+      "percent_change_15m": 0,
+      "percent_change_30m": 0,
+      "percent_change_1h": 0,
+      "percent_change_6h": 0,
+      "percent_change_12h": -0.09,
+      "percent_change_24h": 1.59,
+      "percent_change_7d": 0.28,
+      "percent_change_30d": 27.39,
+      "percent_change_1y": -37.99,
+      "ath_price": 20089,
+      "ath_date": "2017-12-17T12:19:00Z",
+      "percent_from_price_ath": -74.3
+    }
+
+quote:
+  type: object
+  properties:
+    price:
+      type: number
+      example: 6350.17460868
+    volume_24h:
+      type: number
+      example: 3362993497
+    volume_24h_change_24h:
+      type: number
+      example: 0.4
+    market_cap:
+      type: number
+      example: 110327457388
+    market_cap_change_24h:
+      type: number
+      example: 2.3
+    percent_change_1h:
+      type: number
+      example: 0.1
+    percent_change_12h:
+      type: number
+      example: 0.13
+    percent_change_24h:
+      type: number
+      example: -0.26
+    percent_change_7d:
+      type: number
+      example: -2.68
+    percent_change_30d:
+      type: number
+      example: -7.16
+    percent_change_1y:
+      type: number
+      example: -4.05
+    ath_price:
+      type: number
+      example: 20089
+    ath_date:
+      type: string
+      example: "2017-12-17T12:19:00Z"
+    percent_from_price_ath:
+      type: number
+      example: -68.38
+
+tick:
+  type: object
+  description: Tick response. Missing values are returned as empty string
+  properties:
+    id:
+      type: string
+      example: btc-bitcoin
+    name:
+      type: string
+      example: Bitcoin
+    symbol:
+      type: string
+      example: BTC
+    rank:
+      type: number
+      example: 1
+    circulating_supply:
+      type: number
+      example: 17007062
+    total_supply:
+      type: number
+      example: 17007062
+    max_supply:
+      type: number
+      example: 21000000
+    beta_value:
+      type: number
+      example: 0.735327
+    first_data_at:
+      type: string
+      example: "2010-11-14T07:20:41Z"
+    last_updated:
+      type: string
+      example: "2018-11-14T07:20:41Z"
+    quotes:
+      $ref: "#/quotes"
+
+historical_ticks:
+  type: array
+  description: Historical tick response.
+  items:
+    $ref: "tickers.yml#/historical_tick"
+
+historical_tick:
+  type: object
+  description: Historical tick response.
+  properties:
+    timestamp:
+      type: string
+      description: RFC3999 (ISO-8601) format
+      example: "2018-03-01T00:00:00Z"
+    price:
+      type: number
+      example: 855.53
+    volume_24h:
+      type: integer
+      example: 1968587956
+    market_cap:
+      type: integer
+      example: 83761787514

@@ -1,0 +1,39 @@
+global:
+  get:
+    summary: Get market overview data
+    description: |
+      Returns current cryptocurrencies market overview metrics, such as:
+      * Global market capitalization
+      * Total 24h volume of all cryptocurrencies
+      * Number of active cryptocurrencies on coinpaprika.com
+      * ATH of 24h volume and market capitalization
+      * and more
+
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 5 minute.
+    tags:
+    - Global
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/global'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/global.yml#/global"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"

@@ -1,0 +1,47 @@
+global:
+  type: object
+  properties:
+    market_cap_usd:
+      type: number
+      example: 430252937008
+      description: Total market capitalization - sum of all cryptocurrency market capitalizations in USD
+    volume_24h_usd:
+      type: number
+      example: 430252937008
+      description: Total 24h volume - sum of all cryptocurrency volumes in USD
+    bitcoin_dominance_percentage:
+      type: number
+      example: 36.67
+      description: Bitcoin market capitalization as a percentage of total market capitalization
+    cryptocurrencies_number:
+      type: integer
+      example: 1587
+      description: This is number of active cryptocurrencies on our site (active in this case means that we have up-to-date price data for a coin). Total number of our cryptocurrencies is higher and may be obtained via counting elements in /coins endpoint.
+    market_cap_ath_value:
+      type: number
+      example: 835692000000
+      description: ATH (All Time High) value of market capitalization - the highest historical value of marketcap
+    market_cap_ath_date:
+      type: string
+      example: "2018-01-07T11:17:00Z"
+      description: ATH (All Time High) date of market capitalization
+    volume_24h_ath_value:
+      type: number
+      example: 71990500000
+      description: ATH (All Time High) value of the 24h volume - the highest historical value of 24h volume
+    volume_24h_ath_date:
+      type: string
+      example: "2018-01-04T17:17:00Z"
+      description: ATH (All Time High) date of volume 24h
+    market_cap_change_24h:
+      type: number
+      example: 1.98
+      description: Percentage change in the market capitalization over the last 24h
+    volume_24h_change_24h:
+      type: number
+      example: 1.98
+      description: Percentage change in the volume 24h over the last 24h
+    last_updated:
+      type: integer
+      example: 1525089441
+      description: Timestamp of the last data update

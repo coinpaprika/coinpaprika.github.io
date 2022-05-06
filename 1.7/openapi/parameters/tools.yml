@@ -1,0 +1,50 @@
+search_query:
+  name: q
+  in: query
+  required: true
+  description: "phrase for search eg. `btc`"
+  schema:
+    type: string
+search_category:
+  name: c
+  in: query
+  required: false
+  description: "one or more categories (comma separated) to search. Available options: `currencies|exchanges|icos|people|tags`"
+  schema:
+    type: string
+    default: currencies,exchanges,icos,people,tags
+search_modifier:
+  name: modifier
+  in: query
+  required: false
+  description: "set modifier for search results. Available options: `symbol_search` - search only by symbol (works for currencies only)"
+  schema:
+    type: string
+search_limit:
+  name: limit
+  in: query
+  required: false
+  description: "limit of results per category (max 250)"
+  schema:
+    type: integer
+    default: 6
+
+converter_base_currency_id:
+  name: base_currency_id
+  in: query
+  required: true
+  schema:
+    type: string
+converter_quote_currency_id:
+  name: quote_currency_id
+  in: query
+  required: true
+  schema:
+    type: string
+converter_amount:
+  name: amount
+  in: query
+  required: false
+  schema:
+    type: integer
+    default: 0

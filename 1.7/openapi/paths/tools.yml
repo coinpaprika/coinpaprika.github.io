@@ -1,0 +1,82 @@
+search:
+  get:
+    summary: Search
+    description: |
+      Returns currencies, exchanges, icos, people, tags on coinpaprika.com for a given search query.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/search?q=btc'
+    tags:
+    - Tools
+    parameters:
+    - $ref: "../parameters/tools.yml#/search_query"
+    - $ref: "../parameters/tools.yml#/search_category"
+    - $ref: "../parameters/tools.yml#/search_modifier"
+    - $ref: "../parameters/tools.yml#/search_limit"
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/tools.yml#/search_results"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+      400:
+        description: "invalid parameters"
+
+price_converter:
+  get:
+    summary: Price converter
+    description: |
+      Converts a set amount of base currency to quote currency.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/price-converter?base_currency_id=btc-bitcoin&quote_currency_id=eth-ethereum&amount=1.2'
+    tags:
+      - Tools
+    parameters:
+      - $ref: "../parameters/tools.yml#/converter_base_currency_id"
+      - $ref: "../parameters/tools.yml#/converter_quote_currency_id"
+      - $ref: "../parameters/tools.yml#/converter_amount"
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/tools.yml#/price_converter_response"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+      400:
+        description: "invalid parameters"

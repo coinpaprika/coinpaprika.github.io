@@ -1,0 +1,236 @@
+exchange_simplified:
+  type: object
+  properties:
+    id:
+      type: string
+      example: binance
+    name:
+      type: string
+      example: Binance
+    rank:
+      type: integer
+      example: 1
+
+exchange_with_share:
+  type: object
+  properties:
+    id:
+      type: string
+      example: binance
+    name:
+      type: string
+      example: Binance
+    fiats:
+      type: array
+      items: "#/exchange_fiat"
+      example: [{"name":"US Dollars","symbol":"USD"}]
+    adjusted_volume_24h_share:
+      type: number
+      example: 11.26
+
+exchange:
+  type: object
+  properties:
+    id:
+      type: string
+      example: binance
+    name:
+      type: string
+      example: Binance
+    active:
+      type: boolean
+      example: true
+    website_status:
+      type: boolean
+      example: true
+    api_status:
+      type: boolean
+      example: true
+    description:
+      type: string
+      example: "Binance is a Malta-based cryptocurrency exchange founded in July 2017"
+      nullable: true
+    message:
+      type: string
+      example: "Currently under maintenance"
+    links:
+      $ref: "#/exchange_links"
+    markets_data_fetched:
+      type: boolean
+      example: true
+    adjusted_rank:
+      type: integer
+      example: 1
+    reported_rank:
+      type: integer
+      example: 3
+    currencies:
+      type: integer
+      example: 150
+    markets:
+      type: integer
+      example: 385
+    fiats:
+      type: array
+      items: "#/exchange_fiat"
+      example: [{"name":"US Dollars","symbol":"USD"}]
+    quotes:
+      $ref: "#/quotes"
+    last_updated:
+      type: string
+      example: "2018-11-14T07:20:41Z"
+
+exchange_fiat:
+  type: object
+  properties:
+    name:
+      type: string
+      example: "US Dollars"
+    symbol:
+      type: string
+      example: "USD"
+
+exchange_links:
+  type: object
+  properties:
+    website:
+      type: array
+      items: string
+      example: ["https://www.binance.com/"]
+    twitter:
+      type: array
+      items: string
+      example: ["https://twitter.com/binance"]
+
+quotes:
+  type: object
+  properties:
+    $KEY:
+      $ref: "#/quote"
+
+quote:
+  type: object
+  properties:
+    reported_volume_24h:
+      type: number
+      example: 794020873
+    adjusted_volume_24h:
+      type: number
+      example: 794020873
+    reported_volume_7d:
+      type: number
+      example: 153060819
+      description: 7d reported volume. This value is updated once per day at midnight (UTC). For example, at 2019-04-11 11:00 AM this value is the exchange volume between 2019-04-04 00:00:00 UTC and 2019-04-11 00:00:00 UTC
+    adjusted_volume_7d:
+      type: number
+      example: 153060819
+      description: 7d adjusted volume updated once per day at midnight (UTC). See `reported_volume_7d` description for more details
+    reported_volume_30d:
+      type: number
+      example: 301246828
+      description: 30d reported volume. This value is updated once per day at midnight (UTC). For example, at 2019-04-11 11:00 AM this value is the exchange volume between 2019-03-12 00:00:00 UTC and 2019-04-11 00:00:00 UTC
+    adjusted_volume_30d:
+      type: number
+      example: 301246828
+      description: 30d adjusted volume updated once per day at midnight (UTC). See `reported_volume_30d` description for more details
+
+market:
+  type: object
+  properties:
+    pair:
+      type: string
+      example: BTC/USDT
+    base_currency_id:
+      type: string
+      example: btc-bitcoin
+    base_currency_name:
+      type: string
+      example: Bitcoin
+    quote_currency_id:
+      type: string
+      example: usdt-tether
+    quote_currency_name:
+      type: string
+      example: Tether
+    market_url:
+      type: string
+      example: https://www.binance.com/en/trade/BTC_USDT
+    category:
+      type: string
+      example: Spot
+    fee_type:
+      type: string
+      example: Percentage
+    outlier:
+      type: bool
+      example: false
+    reported_volume_24h_share:
+      type: number
+      example: 30.29
+    quotes:
+      $ref: "#/market_quotes"
+    last_updated:
+      type: string
+      example: "2018-11-14T07:20:41Z"
+
+market_quotes:
+  type: object
+  properties:
+    $KEY:
+      $ref: "#/market_quote"
+
+market_quote:
+  type: object
+  properties:
+    price:
+      type: number
+      example: 4582.6967796728
+    volume_24h:
+      type: number
+      example: 229658776.19514218
+
+
+coin_market:
+  type: object
+  properties:
+    exchange_id:
+      type: string
+      example: binance
+    exchange_name:
+      type: string
+      example: Binance
+    pair:
+      type: string
+      example: BTC/USDT
+    base_currency_id:
+      type: string
+      example: btc-bitcoin
+    base_currency_name:
+      type: string
+      example: Bitcoin
+    quote_currency_id:
+      type: string
+      example: usdt-tether
+    quote_currency_name:
+      type: string
+      example: Tether
+    market_url:
+      type: string
+      example: https://www.binance.com/en/trade/BTC_USDT
+    category:
+      type: string
+      example: Spot
+    fee_type:
+      type: string
+      example: Percentage
+    outlier:
+      type: bool
+      example: false
+    adjusted_volume_24h_share:
+      type: number
+      example: 30.29
+    quotes:
+      $ref: "#/market_quotes"
+    last_updated:
+      type: string
+      example: "2018-11-14T07:20:41Z"

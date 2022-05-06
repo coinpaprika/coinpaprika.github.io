@@ -1,0 +1,409 @@
+coins:
+  get:
+    summary: List coins
+    description: |
+      Returns basic information about cryptocurrencies on coinpaprika.com:
+      * identity (`id`, `name`, `symbol`)
+      * ranking (`rank`)
+      * activity status (`is_active`)
+      * type of cryptocurrency (`type`) - `coin` or `token`
+      * information whether the currency is new (`is_new`) - true if the currency was added within the last 5 days
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    tags:
+    - Coins
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/coins'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/currency"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+coin_by_id:
+  get:
+    summary: Get coin by ID
+    description: |
+      Returns detailed descriptive information about a single coin, without price or volume data. For price data, check the [/tickers](#operation/getTickers) and [/tickers/{coin_id}](#operation/getTickersById) endpoints.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    operationId: "getCoinById"
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - Coins
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/coins/btc-bitcoin'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/coins.yml#/coin_extended"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+
+twitter:
+  get:
+    summary: Get Twitter timeline tweets for a coin
+    description: |
+      Returns the last 50 timeline tweets from the official Twitter profile for a given coin.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 5 minutes.
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - Coins
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/coins/btc-bitcoin/twitter'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/twitter"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+events:
+  get:
+    summary: Get coin events by coin ID
+    description: |
+      Returns events for a given coin.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 5 minutes.
+    parameters:
+    - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - Coins
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/coins/btc-bitcoin/events'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/events.yml#/event"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+coins_ohlcv_latest:
+  get:
+    summary: Get OHLC for the last full day
+    description: |
+      Returns Open/High/Low/Close values with volume and market capitalization for the last full day.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+      - $ref: "../parameters/coins.yml#/ohlcv_quote"
+    tags:
+    - Coins
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/coins/btc-bitcoin/ohlcv/latest'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/coins_ohlcv"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+
+coins_ohlcv_today:
+  get:
+    summary: Get today OHLC
+    description: |
+      Returns Open/High/Low/Close values with volume and market capitalization for the current day. Data can change every each request until actual close of the day at 23:59:59.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+      - $ref: "../parameters/coins.yml#/ohlcv_quote"
+    tags:
+      - Coins
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/coins/btc-bitcoin/ohlcv/today'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/coins_ohlcv"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+coins_ohlcv_historical:
+  get:
+    summary: Get historical OHLC
+    description: |
+      Returns Open/High/Low/Close values with volume and market capitalization for any date range. If the `end` date is the current day, data can change with every request until actual close of the day at 23:59:59"
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+      - $ref: "../parameters/coins.yml#/ohlcv_start"
+      - $ref: "../parameters/coins.yml#/ohlcv_end"
+      - $ref: "../parameters/coins.yml#/ohlcv_limit"
+      - $ref: "../parameters/coins.yml#/ohlcv_quote"
+    tags:
+    - Coins
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/coins/btc-bitcoin/ohlcv/historical?start=2019-01-01&end=2019-01-20'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/coins_ohlcv"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+exchanges_by_coin_id:
+  get:
+    summary: Get exchanges by coin ID
+    description: |
+      Returns exchanges where a given coin is traded.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    parameters:
+    - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - Coins
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/coins/btc-bitcoin/exchanges'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/exchanges.yml#/exchange_with_share"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+markets_by_coin_id:
+  get:
+    summary: Get markets by coin ID
+    description: |
+      Returns all available markets for a given coin.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    parameters:
+    - $ref: "../parameters/coins.yml#/coin_id"
+    - $ref: "../parameters/coins.yml#/quotes"
+    tags:
+    - Coins
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/coins/btc-bitcoin/markets'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/exchanges.yml#/coin_market"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"

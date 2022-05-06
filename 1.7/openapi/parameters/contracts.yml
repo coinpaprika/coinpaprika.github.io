@@ -1,0 +1,15 @@
+platform_id:
+  name: platform_id
+  in: path
+  required: true
+  schema:
+    type: string
+    example: eth_ethereum
+
+contract_address:
+  name: contract_address
+  in: path
+  required: true
+  schema:
+    type: string
+    example: "0xd26114cd6ee289accf82350c8d8487fedb8a0c07"

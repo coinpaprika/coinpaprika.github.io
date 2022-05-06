@@ -1,0 +1,93 @@
+tags:
+  get:
+    summary: List tags
+    description: |
+      Returns basic information about cryptocurrencies tags (categories):
+      * name
+      * description
+      * type of tag: `technical` or `functional`
+      * number of coins with the tag
+      * number of ICOs with the tag
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 hour.
+    tags:
+    - Tags
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/tags'
+    parameters:
+    - $ref: "../parameters/tags.yml#/additional_fields"
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/tags.yml#/tag"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+tag_by_id:
+  get:
+    summary: Get tag by ID
+    description: |
+      Returns information about a given cryptocurrency tag:
+      * name
+      * description
+      * type of tag: `technical` or `functional`
+      * number of coins with the tag
+      * number of ICOs with the tag
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 hour.
+    tags:
+    - Tags
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/v1/tags/blockchain-service'
+    parameters:
+    - $ref: "../parameters/tags.yml#/tag_id"
+    - $ref: "../parameters/tags.yml#/additional_fields"
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/tags.yml#/tag"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+

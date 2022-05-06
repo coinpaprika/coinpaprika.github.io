@@ -1,0 +1,16 @@
+platform:
+  type: string
+  example: eth-ethereum
+
+contract:
+  type: object
+  properties:
+    address:
+      type: string
+      example: "0xd26114cd6ee289accf82350c8d8487fedb8a0c07"
+    id:
+      type: string
+      example: omg-omisego
+    type:
+      type: string
+      example: ERC20
