@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 
 info:
-  version: 1.7.0
+  version: 1.7.1
   title: Coinpaprika API
   x-logo:
     url: "https://coinpaprika.com/static/files/df51e301.png#greywizard/rock-coin-web/assets/img/cp_logo-transparent.png"
@@ -83,6 +83,8 @@ info:
     * [API v1.5](https://api.coinpaprika.com/docs/1.5)
     * [API v1.6](https://api.coinpaprika.com/docs/1.6)
     # Version history
+    ## v1.7.1 - 2022.07.14
+    * Beta endpoints documentation
     ## v1.7.0 - 2022.05.06
     * API-Pro documentation
     ## v1.6.1 - 2020.12.09
@@ -104,6 +106,7 @@ tags:
 - name: "Exchanges"
 - name: "Tools"
 - name: "Contracts"
+- name: "Beta"
 - name: "Deprecated"
 
 paths:
@@ -176,6 +179,14 @@ paths:
     $ref: "paths/contracts.yml#/ticker_redirect"
   /contracts/{platform_id}/{contract_address}/historical:
     $ref: "paths/contracts.yml#/ticker_historical_redirect"
+
+  # Beta
+  /beta/sentiment/social:
+    $ref: "paths/beta.yml#/sentiment_coins"
+  /beta/sentiment/social/{coin_id}:
+    $ref: "paths/beta.yml#/sentiment_by_coin_id"
+  /beta/sentiment/social/{coin_id}/historical:
+    $ref: "paths/beta.yml#/sentiment_by_coin_id_historical"
 
   # Tools
   /search:

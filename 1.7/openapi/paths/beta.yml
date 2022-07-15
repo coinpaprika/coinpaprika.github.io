@@ -1,0 +1,141 @@
+sentiment_coins:
+  get:
+    summary: List sentiment coins
+    description: |
+      Lists all the coins for which sentiment data is available along with the source from which sentiment is calculated 
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 5 minute.
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/beta/sentiment/social'
+    operationId: "sentimentCoins"
+    tags:
+    - Beta
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/beta.yml#/sentiment_coin"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+
+sentiment_by_coin_id:
+  get:
+    summary: Get sentiment data for a specific coin
+    description: |
+      Returns data about last known average emotions and sentiment for a single coin:
+      - positive sentiment
+      - negative sentiment
+      - fear emotion
+      - trust emotion
+
+      Value of each property is between 0 (minimum level) and 1 (maximum level). The value is calculated from the data collected in the last hour.
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 hour.
+    operationId: "getSentimentByCoinId"
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - Beta
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/beta/sentiment/social/btc-bitcoin'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/beta.yml#/sentiment"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+
+sentiment_by_coin_id_historical:
+  get:
+    summary: Get historical sentiment data for a specific coin
+    description: |
+      Returns data about historical average emotions and sentiment for a single coin:
+      - positive sentiment
+      - negative sentiment
+      - fear emotion
+      - trust emotion
+
+      Value of each property is between 0 (minimum level) and 1 (maximum level).
+
+      The endpoint returns data from the last 30 days and the interval of each value is one hour. 
+     
+      **Available on the following API plans:**
+      - Free
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 hour.
+    operationId: "getSentimentHistoricalByCoinId"
+    parameters:
+      - $ref: "../parameters/coins.yml#/coin_id"
+    tags:
+    - Beta
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api.coinpaprika.com/beta/sentiment/social/btc-bitcoin/historical'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/beta.yml#/sentiment_historical"
+      404:
+        description: "not found"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/idNotFoundError"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
