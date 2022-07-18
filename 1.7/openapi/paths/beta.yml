@@ -4,7 +4,7 @@ sentiment_coins:
     description: |
       Lists all the coins for which sentiment data is available along with the source from which sentiment is calculated.
       
-      Sentiment analysis endpoints are provided in collaboration with https://sentimenti.pl
+      Sentiment analysis endpoints are provided in collaboration with https://sentimenti.com
      
       **Available on the following API plans:**
       - Free
@@ -51,8 +51,8 @@ sentiment_by_coin_id:
 
       Value of each property is between 0 (minimum level) and 1 (maximum level). The value is calculated from the data collected in the last hour.
       
-      Sentiment analysis endpoints are provided in collaboration with https://sentimenti.pl
-     
+      Sentiment analysis endpoints are provided in collaboration with https://sentimenti.com
+      
       **Available on the following API plans:**
       - Free
       - Pro
@@ -106,7 +106,7 @@ sentiment_by_coin_id_historical:
 
       The endpoint returns data from the last 30 days and the interval of each value is one hour. 
       
-      Sentiment analysis endpoints are provided in collaboration with https://sentimenti.pl
+      Sentiment analysis endpoints are provided in collaboration with https://sentimenti.com
      
       **Available on the following API plans:**
       - Free
