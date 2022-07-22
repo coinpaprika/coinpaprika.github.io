@@ -1,0 +1,44 @@
+ids:
+  get:
+    tags:
+      - Changelog
+    summary: Get id changelog for all coins
+    description: |
+      Returns coin id changes made by coinpaprika.com moderators:
+      * `currency_id` - current id of a coin
+      * `old_id` - old coin id that has been replaced with a new one
+      * `new_id` - new coin id that replaced the old one
+      * `changed_at` - date of the change
+     
+      **Available on the following API plans:**
+      - Starter
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api-pro.coinpaprika.com/v1/changelog/ids' \
+          --header 'Authorization: <your-api-key>'
+    operationId: "getChangelogIDs"
+    parameters:
+      - $ref: "../parameters/changelog.yml#/page"
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/changelog.yml#/ids_changelog"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"

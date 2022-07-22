@@ -1,0 +1,24 @@
+ids_changelog:
+  type: array
+  description: IDs changelog response
+  items:
+    $ref: "changelog.yml#/id_changelog"
+
+
+id_changelog:
+  type: object
+  description: ID changelog
+  properties:
+    currency_id:
+      type: string
+      example: "btc-bitcoin"
+    old_id:
+      type: string
+      example: "btc-bitcoin123"
+    new_id:
+      type: string
+      example: "btc-bitcoin456"
+    changed_at:
+      type: string
+      description: RFC3999 (ISO-8601) format
+      example: "2022-07-15T07:00:00Z"
