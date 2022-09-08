@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 
 info:
-  version: 1.7.2
+  version: 1.7.3
   title: Coinpaprika API
   x-logo:
     url: "https://coinpaprika.com/static/files/df51e301.png#greywizard/rock-coin-web/assets/img/cp_logo-transparent.png"
@@ -17,6 +17,7 @@ info:
     | Plan       | Base URL                            |
     |------------|-------------------------------------|
     | Free       | https://api.coinpaprika.com/v1/     |
+    | Starter    | https://api-pro.coinpaprika.com/v1/ |
     | Pro        | https://api-pro.coinpaprika.com/v1/ |
     | Business   | https://api-pro.coinpaprika.com/v1/ |
     | Enterprise | https://api-pro.coinpaprika.com/v1/ |
@@ -53,7 +54,15 @@ info:
       
    
     # Rate limit
-    * Single IP address can send less than 10 requests per second
+    * A single IP address cannot send more than 10 requests per second
+    * The monthly number of requests is limited depending on the plan:
+      | Plan       | Calls/month                         |
+      |------------|-------------------------------------|
+      | Free       | 25 000 |
+      | Starter    | 200 000 |
+      | Pro        | 500 000 |
+      | Business   | 3 000 000 |
+      | Enterprise | No limits |
 
     # API Clients
     We provide the API clients in several popular programming languages:
@@ -83,6 +92,8 @@ info:
     * [API v1.5](https://api.coinpaprika.com/docs/1.5)
     * [API v1.6](https://api.coinpaprika.com/docs/1.6)
     # Version history
+    ## v1.7.3 - 2022.09.08
+    * Plans update
     ## v1.7.2 - 2022.07.22
     * Changelog endpoint documentation
     ## v1.7.1 - 2022.07.14

@@ -17,6 +17,7 @@ exchanges:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
@@ -64,6 +65,7 @@ exchange_by_id:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
@@ -113,6 +115,7 @@ markets_by_exchange_id:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise

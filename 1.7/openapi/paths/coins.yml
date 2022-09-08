@@ -11,6 +11,7 @@ coins:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
@@ -48,6 +49,7 @@ coin_by_id:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
@@ -93,6 +95,7 @@ twitter:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
@@ -138,6 +141,7 @@ events:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
@@ -183,6 +187,7 @@ coins_ohlcv_latest:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
@@ -230,6 +235,7 @@ coins_ohlcv_today:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
@@ -276,9 +282,20 @@ coins_ohlcv_historical:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
+
+      **Maximum time range of data available to fetch depending on the plan:**
+
+      | Plan       | Time range                         |
+      |------------|-------------------------------------|
+      | Free       | Last 24 hours |
+      | Starter    | Last 30 days |
+      | Pro        | Last 90 days |
+      | Business   | Last 365 days |
+      | Enterprise | No limits |
 
       **Update interval:** Every 1 minute.
     parameters:
@@ -325,6 +342,7 @@ exchanges_by_coin_id:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
@@ -370,6 +388,7 @@ markets_by_coin_id:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise

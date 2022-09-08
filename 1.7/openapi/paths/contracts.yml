@@ -6,6 +6,7 @@ platforms:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
@@ -44,6 +45,7 @@ contracts_by_platform:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
@@ -84,6 +86,7 @@ ticker_redirect:
      
       **Available on the following API plans:**
       - Free
+      - Starter
       - Pro
       - Business
       - Enterprise
