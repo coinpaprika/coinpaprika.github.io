@@ -66,6 +66,10 @@ coin_extended:
       type: string
       example: coin
       description: Type of the cryptocurrency. Currently supported values are `coin` and `token`
+    image_url:
+      type: string
+      example: "https://static.coinpaprika.com/coin/bnb-binance-coin/logo.png"
+      description: Logo image URL
     tags:
       type: array
       items:
