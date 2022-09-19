@@ -1,0 +1,46 @@
+usage:
+  type: object
+  description: Monthly usage for the API key
+  properties:
+    message:
+      type: string
+      example: limited plan
+      description: "`limited plan` if the number of requests is limited in the current plan or `unlimited plan` if there is no limit on the number of requests"
+    current_month:
+      $ref: "#/current_month"
+
+
+current_month:
+  type: object
+  description: Requests made and left stats
+  properties:
+    requests_made:
+      type: number
+      example: 18
+      description: "Number of requests made in the current month. If a plan has no limit on the number of requests, e.g., `Enterprise` plan, then the value of `requests_made` is -1"
+    requests_left:
+      type: number
+      example: 499982
+      description: "Number of requests left in the  current month. If a plan has no limit on the number of requests, e.g., `Enterprise` plan, then the value of `requests_left` is -1"
+
+info:
+  type: object
+  properties:
+    plan:
+      type: string
+      example: pro
+      description: Name of the API plan
+    plan_started_at:
+      type: string
+      description: A date when the plan started in RFC3999 (ISO-8601) format
+      example: "2022-09-16T10:17:24Z"
+    plan_status:
+      type: string
+      example: active
+      description: "Status of the plan. There are 3 possible statuses: `active` - the subscription is active; `past_due` - the subscription payment failed. If payment is not made within 7 days, then the subscription will expire; `inactive` - the subscription is inactive."
+    portal_url:
+      type: string
+      example: https://coinpaprika.com/api/panel
+      description: API Customer Portal URL
+    usage:
+      $ref: "#/usage"

@@ -1,0 +1,42 @@
+info:
+  get:
+    summary: Get API key info
+    description: |
+      Returns API key information:
+      * Name of the API key plan
+      * When the plan started
+      * A flag indicating if the plan is active
+      * Link to the API user portal
+      * Monthly usage
+
+      **Available on the following API plans:**
+      - Starter
+      - Pro
+      - Business
+      - Enterprise
+
+      **Update interval:** Every 1 minute.
+    tags:
+    - Key
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url https://api-pro.coinpaprika.com/v1/key/info \
+          --header 'Authorization: <api-key>'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/key.yml#/info"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"
+      403:
+        description: "The request could not be processed due to invalid API key"
