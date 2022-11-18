@@ -91,7 +91,7 @@ ticker_redirect:
       - Business
       - Enterprise
 
-      **Update interval:** Every 1 minute.
+      **Update interval:** Every 5 minute.
     x-codeSamples:
       - lang: 'cURL'
         label: 'CLI'
@@ -122,7 +122,7 @@ ticker_historical_redirect:
      
       **Check [historical ticks endpoint documentation](#operation/getTickersHistoricalById) to find out about the limitations for each API plan.**
 
-      **Update interval:** Every 1 minute.
+      **Update interval:** Every 5 minute.
     x-codeSamples:
       - lang: 'cURL'
         label: 'CLI'

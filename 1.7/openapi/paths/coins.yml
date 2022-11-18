@@ -192,7 +192,7 @@ coins_ohlcv_latest:
       - Business
       - Enterprise
 
-      **Update interval:** Every 1 minute.
+      **Update interval:** Every 1 day.
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
       - $ref: "../parameters/coins.yml#/ohlcv_quote"
@@ -240,7 +240,7 @@ coins_ohlcv_today:
       - Business
       - Enterprise
 
-      **Update interval:** Every 1 minute.
+      **Update interval:** Every 5 minute.
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
       - $ref: "../parameters/coins.yml#/ohlcv_quote"
@@ -297,7 +297,7 @@ coins_ohlcv_historical:
       | Business   | Last 365 days |
       | Enterprise | No limits |
 
-      **Update interval:** Every 1 minute.
+      **Update interval:** Every 5 minute.
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
       - $ref: "../parameters/coins.yml#/ohlcv_start"
