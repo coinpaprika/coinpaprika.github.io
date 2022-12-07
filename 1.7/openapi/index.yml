@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 
 info:
-  version: 1.7.3
+  version: 1.7.5
   title: Coinpaprika API
   x-logo:
     url: "https://coinpaprika.com/static/files/df51e301.png#greywizard/rock-coin-web/assets/img/cp_logo-transparent.png"
@@ -78,10 +78,6 @@ info:
       * [Python](https://github.com/s0h3ck/coinpaprika-api-python-client)
 
     **Note**: some of them may not be updated yet. We are working on improving them and they will be updated soon. If you'd like to contribute, please report issues and send PRs on Github.
-
-
-   
- 
     
     
     # Terms of use
@@ -93,6 +89,8 @@ info:
     * [API v1.5](https://api.coinpaprika.com/docs/1.5)
     * [API v1.6](https://api.coinpaprika.com/docs/1.6)
     # Version history
+    ## v1.7.5 - 2022.12.07
+    * Removed documentation for /beta/ endpoints
     ## v1.7.4 - 2022.09.19
     * Key info endpoint
     * Coin logo image URL
@@ -125,9 +123,6 @@ tags:
 - name: "Tools"
 - name: "Contracts"
 - name: "Changelog"
-- name: "Beta"
-  description: "Features in the Beta endpoint are provided as Technology Preview - are not fully supported, may not be functionally complete, and are not suitable for deployment in production. However, these features are provided to the customer as a courtesy and the primary goal is for the feature to gain wider exposure with the goal of full support in the future.
-Customers may find these features useful in a non-production environment. Customers are also free to provide feedback and functionality suggestions for a Technology Preview feature before it becomes fully supported."
 - name: "Deprecated"
 
 paths:
@@ -208,14 +203,6 @@ paths:
   # Changelog
   /changelog/ids:
     $ref: "paths/changelog.yml#/ids"
-
-  # Beta
-  /beta/sentiment/social:
-    $ref: "paths/beta.yml#/sentiment_coins"
-  /beta/sentiment/social/{coin_id}:
-    $ref: "paths/beta.yml#/sentiment_by_coin_id"
-  /beta/sentiment/social/{coin_id}/historical:
-    $ref: "paths/beta.yml#/sentiment_by_coin_id_historical"
 
   # Tools
   /search:
