@@ -54,7 +54,6 @@ info:
       
    
     # Rate limit
-    * A single IP address cannot send more than 10 requests per second
     * The monthly number of requests is limited depending on the plan:
       | Plan       | Calls/month                         |
       |------------|-------------------------------------|
