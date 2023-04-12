@@ -297,12 +297,40 @@ coins_ohlcv_historical:
       | Business   | Last 365 days |
       | Enterprise | No limits |
 
-      **Update interval:** Every 5 minute.
+      **The default interval of returned data for OHLCV is 24 hours:**
+      ```
+      [
+        {
+          "time_open": "2020-01-01T00:00:00Z",
+          "time_close": "2020-01-01T23:59:59Z",
+          "open": ...,
+          "high": ...,
+          "low": ...,
+          "close": ...,
+          "volume": ...,
+          "market_cap": ...
+        }
+        ...
+      ]
+      ```
+
+      **However, depending on your API plan, you can set a smaller interval by using the query parameter `interval`:**
+
+      | Plan       | `interval` parameter value          |
+      |------------|-------------------------------------|
+      | Free       | `24h` |
+      | Starter    | `24h` |
+      | Pro        | `24h` |
+      | Business   | `1h`, `6h`, `12h`, `24h` |
+      | Enterprise | `15m`, `30m`, `1h`, `6h`, `12h`, `24h` |
+
+      **Update interval:** Every 15 minute.
     parameters:
       - $ref: "../parameters/coins.yml#/coin_id"
       - $ref: "../parameters/coins.yml#/ohlcv_start"
       - $ref: "../parameters/coins.yml#/ohlcv_end"
       - $ref: "../parameters/coins.yml#/ohlcv_limit"
+      - $ref: "../parameters/coins.yml#/ohlcv_interval"
       - $ref: "../parameters/coins.yml#/ohlcv_quote"
     tags:
     - Coins

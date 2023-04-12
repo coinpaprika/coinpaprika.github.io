@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 
 info:
-  version: 1.7.5
+  version: 1.7.6
   title: Coinpaprika API
   x-logo:
     url: "https://coinpaprika.com/static/files/df51e301.png#greywizard/rock-coin-web/assets/img/cp_logo-transparent.png"
@@ -88,6 +88,8 @@ info:
     * [API v1.5](https://api.coinpaprika.com/docs/1.5)
     * [API v1.6](https://api.coinpaprika.com/docs/1.6)
     # Version history
+    ## v1.7.6 - 2023.04.12
+    * New intervals for OHLCV endpoint
     ## v1.7.5 - 2022.12.07
     * Removed documentation for /beta/ endpoints
     ## v1.7.4 - 2022.09.19
