@@ -28,7 +28,9 @@ tickers:
       | Business   | No limits |
       | Enterprise | No limits |
 
-      **Update interval:** Every 5 minutes.
+      **Update interval:** 
+      - 3 minutes for Starter, Pro, Business, Enterprise plans
+      - On average 5 minutes for Free
     x-codeSamples:
       - lang: 'cURL'
         label: 'CLI'
@@ -74,7 +76,9 @@ tickers_by_id:
       - Business
       - Enterprise
 
-      **Update interval:** Every 5 minutes.
+      **Update interval:** 
+      - 3 minutes for Starter, Pro, Business, Enterprise plans
+      - On average 5 minutes for Free
     x-codeSamples:
       - lang: 'cURL'
         label: 'CLI'
