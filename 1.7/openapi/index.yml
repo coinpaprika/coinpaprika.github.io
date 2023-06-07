@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 
 info:
-  version: 1.7.6
+  version: 1.7.7
   title: Coinpaprika API
   x-logo:
     url: "https://coinpaprika.com/static/files/df51e301.png#greywizard/rock-coin-web/assets/img/cp_logo-transparent.png"
@@ -70,11 +70,11 @@ info:
     * [GO](https://github.com/coinpaprika/coinpaprika-api-go-client)
     * [Swift](https://github.com/coinpaprika/coinpaprika-api-swift-client)
     * [Kotlin](https://github.com/coinpaprika/coinpaprika-api-kotlin-client)
+    * [Python](https://github.com/coinpaprika/coinpaprika-api-python-client)
     * Community Contributed Clients:
       * [Rust](https://github.com/tokenomia-pro/coinpaprika-api-rust-client) built by <a href="https://tokenomia.pro/" target="_blank">tokenomia.pro</a>
       * [C#](https://github.com/MSiccDev/CoinpaprikaAPI)
       * [JS](https://github.com/jaggedsoft/coinpaprika-js)
-      * [Python](https://github.com/s0h3ck/coinpaprika-api-python-client)
 
     **Note**: some of them may not be updated yet. We are working on improving them and they will be updated soon. If you'd like to contribute, please report issues and send PRs on Github.
     
@@ -88,6 +88,8 @@ info:
     * [API v1.5](https://api.coinpaprika.com/docs/1.5)
     * [API v1.6](https://api.coinpaprika.com/docs/1.6)
     # Version history
+    ## 1.7.7 - 2023.06.07
+    * Added official Python client link
     ## v1.7.6 - 2023.04.12
     * New intervals for OHLCV endpoint
     ## v1.7.5 - 2022.12.07
