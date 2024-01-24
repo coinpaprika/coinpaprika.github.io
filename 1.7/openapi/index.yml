@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 
 info:
-  version: 1.7.7
+  version: 1.7.8
   title: Coinpaprika API
   x-logo:
     url: "https://coinpaprika.com/static/files/df51e301.png#greywizard/rock-coin-web/assets/img/cp_logo-transparent.png"
@@ -57,7 +57,7 @@ info:
     * The monthly number of requests is limited depending on the plan:
       | Plan       | Calls/month                         |
       |------------|-------------------------------------|
-      | Free       | 25 000 |
+      | Free       | 20 000 |
       | Starter    | 200 000 |
       | Pro        | 500 000 |
       | Business   | 3 000 000 |
@@ -88,6 +88,8 @@ info:
     * [API v1.5](https://api.coinpaprika.com/docs/1.5)
     * [API v1.6](https://api.coinpaprika.com/docs/1.6)
     # Version history
+    ## 1.7.8 - 2024.01.24
+    * Plan limits update
     ## 1.7.7 - 2023.06.07
     * Added official Python client link
     ## v1.7.6 - 2023.04.12

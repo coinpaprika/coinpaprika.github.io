@@ -12,7 +12,7 @@ tickers:
       * price data in a given currency (price, volumes, market cap, price changes, ath)
      
       **Available on the following API plans:**
-      - Free
+      - Free - there is no `circulating supply` field in the Free plan. If you need this field, use another API plan.
       - Starter
       - Pro
       - Business
@@ -22,7 +22,7 @@ tickers:
 
       | Plan       | Assets                         |
       |------------|-------------------------------------|
-      | Free       | 2500 |
+      | Free       | 2000 |
       | Starter    | No limits |
       | Pro        | No limits |
       | Business   | No limits |
@@ -70,7 +70,7 @@ tickers_by_id:
       * price data in a given currency (price, volumes, market cap, price changes, ath)
      
       **Available on the following API plans:**
-      - Free
+      - Free - there is no `circulating supply` field in the Free plan. If you need this field, use another API plan.
       - Starter
       - Pro
       - Business
