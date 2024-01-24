@@ -71,6 +71,7 @@ info:
     * [Swift](https://github.com/coinpaprika/coinpaprika-api-swift-client)
     * [Kotlin](https://github.com/coinpaprika/coinpaprika-api-kotlin-client)
     * [Python](https://github.com/coinpaprika/coinpaprika-api-python-client)
+    * [Google Sheets](https://github.com/coinpaprika/coinpaprika-google-sheet)
     * Community Contributed Clients:
       * [Rust](https://github.com/tokenomia-pro/coinpaprika-api-rust-client) built by <a href="https://tokenomia.pro/" target="_blank">tokenomia.pro</a>
       * [C#](https://github.com/MSiccDev/CoinpaprikaAPI)
