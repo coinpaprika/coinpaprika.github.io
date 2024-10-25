@@ -4,7 +4,7 @@ info:
   version: 1.7.8
   title: Coinpaprika API
   x-logo:
-    url: "https://coinpaprika.com/static/files/df51e301.png#greywizard/rock-coin-web/assets/img/cp_logo-transparent.png"
+    url: "https://coinpaprika.com/assets/img/API_logo_coinpage_1.svg"
     backgroundColor: "#FAFAFA"
   description: |
     Coinpaprika API delivers precise & frequently updated market data from the world of crypto: coin prices, volumes, market caps, ATHs, return rates and more.
