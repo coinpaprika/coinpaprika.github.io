@@ -75,3 +75,57 @@ ohlcv_interval:
     type: string
     default: 24h
 
+
+coinpaprika_id:
+  name: coinpaprika
+  in: query
+  required: false
+  description: >
+    Coinpaprika API ID of a coin you want to map to the other provider API IDs
+  schema:
+    type: string
+
+coinmarketcap_id:
+  name: coinmarketcap
+  in: query
+  required: false
+  description: >
+    Coinmarketcap API ID of a coin you want to map to the other provider API IDs
+  schema:
+    type: string
+
+coingecko_id:
+  name: coingecko
+  in: query
+  required: false
+  description: >
+    Coingecko API ID of a coin you want to map to the other provider API IDs
+  schema:
+    type: string
+
+cryptocomapre_id:
+  name: cryptocompare
+  in: query
+  required: false
+  description: >
+    Cryptocompare API ID of a coin you want to map to the other provider API IDs
+  schema:
+    type: string
+
+isin_id:
+  name: isin
+  in: query
+  required: false
+  description: >
+    [ISIN](https://www.isin.org/isin-for-cryptocurrency/) ID of a coin you want to map to the other provider API IDs
+  schema:
+    type: string
+
+dti_id:
+  name: dti
+  in: query
+  required: false
+  description: >
+    [Digital Token Identifier](https://www.iso.org/obp/ui/en/#iso:std:iso:24165:-2:ed-1:v1:en) of a coin you want to map to the other provider API IDs
+  schema:
+    type: string

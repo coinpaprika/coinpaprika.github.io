@@ -454,3 +454,97 @@ markets_by_coin_id:
           application/json:
             schema:
               $ref: "../schemas/errors.yml#/tooManyRequestsError"
+
+mappings:
+  get:
+    summary: API ID mappings
+    description: |
+      The API ID Mappings endpoint allows you to map IDs from other cryptocurrency API providers to Coinpaprika API IDs. This is especially useful when you have provider-specific IDs and want to interact with the Coinpaprika API using its own standardized IDs. In addition to Coinpaprika's and other providers internal ID system, this endpoint also supports mapping [ISIN(International Securities Identification Number)](https://www.isin.org/isin-for-cryptocurrency/) and [DTI (Digital Token Identifier)](https://www.iso.org/obp/ui/en/#iso:std:iso:24165:-2:ed-1:v1:en) IDs.
+
+      **Use Cases:**
+        - Map your existing provider IDs (including ISIN and DTI) to Coinpaprika IDs
+        - Retrieve other provider IDs (and ISIN, DTI) corresponding to a given Coinpaprika ID
+        - Easily integrate and standardize data across different platforms with varying ID systems
+
+      This flexibility enables seamless integration across different crypto data sources and allows you to work with a variety of ID formats within the Coinpaprika ecosystem.
+
+      **Available mapping providers**
+        - Coinpaprika
+        - Coinmarketcap
+        - Coingecko
+        - Cryptocompare
+        - [ISIN](https://www.isin.org/isin-for-cryptocurrency/)
+        - [DTI](https://www.iso.org/obp/ui/en/#iso:std:iso:24165:-2:ed-1:v1:en)
+     
+      **Available on the following API plans:**
+      - Business
+      - Enterprise
+
+      **Examples:**
+
+      Use a single query parameter to get mappings for a specific Coinpaprika, Coinmarketcap, Coingecko, Cryptocompare, ISIN, or DTI ID. The response will include all available mappings for the specified ID.
+
+      ```shell
+      # Get mappings for a specific Coinpaprika ID
+      curl --request GET \
+          --url 'https://api-pro.coinpaprika.com/v1/coins/mappings?coinpaprika=btc-bitcoin' \
+          --header 'Authorization: <your-api-key>'
+        
+      # Get mappings for a specific Coinmarketcap ID
+      curl --request GET \
+          --url 'https://api-pro.coinpaprika.com/v1/coins/mappings?coinmarketcap=1' \
+          --header 'Authorization: <your-api-key>'\
+        
+      # Get mappings for a specific Coingecko ID
+      curl --request GET \
+          --url 'https://api-pro.coinpaprika.com/v1/coins/mappings?coingecko=bitcoin' \
+          --header 'Authorization: <your-api-key>'
+        
+      # Get mappings for a specific Cryptocompare ID
+      curl --request GET \
+          --url 'https://api-pro.coinpaprika.com/v1/coins/mappings?cryptocompare=1' \
+          --header 'Authorization: <your-api-key>'
+        
+      # Get mappings for a specific ISIN ID
+      curl --request GET \
+          --url 'https://api-pro.coinpaprika.com/v1/coins/mappings?isin=XTV15WLZJMF0' \
+          --header 'Authorization: <your-api-key>'
+                     
+      # Get mappings for a specific DTI ID
+      curl --request GET \
+          --url 'https://api-pro.coinpaprika.com/v1/coins/mappings?dti=V15WLZJMF' \
+          --header 'Authorization: <your-api-key>'
+      ```
+
+      **Update interval:** Every 1 minute.
+    parameters:
+      - $ref: "../parameters/coins.yml#/coinpaprika_id"
+      - $ref: "../parameters/coins.yml#/coinmarketcap_id"
+      - $ref: "../parameters/coins.yml#/coingecko_id"
+      - $ref: "../parameters/coins.yml#/cryptocompare_id"
+      - $ref: "../parameters/coins.yml#/isin_id"
+      - $ref: "../parameters/coins.yml#/dti_id"
+    tags:
+    - Coins
+    x-codeSamples:
+      - lang: 'cURL'
+        label: 'CLI'
+        source: |
+          curl --request GET \
+          --url 'https://api-pro.coinpaprika.com/v1/coins/mappings?coinpaprika=btc-bitcoin' \
+          --header 'Authorization: <your-api-key>'
+    responses:
+      200:
+        description: "successful operation"
+        content:
+          application/json:
+            schema:
+              type: array
+              items:
+                $ref: "../schemas/coins.yml#/api_mappings"
+      429:
+        description: "too many requests"
+        content:
+          application/json:
+            schema:
+              $ref: "../schemas/errors.yml#/tooManyRequestsError"

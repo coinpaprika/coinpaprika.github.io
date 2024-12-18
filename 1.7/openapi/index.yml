@@ -1,7 +1,7 @@
 openapi: "3.0.0"
 
 info:
-  version: 1.7.8
+  version: 1.7.9
   title: Coinpaprika API
   x-logo:
     url: "https://coinpaprika.com/assets/img/API_logo_coinpage_1.svg"
@@ -89,6 +89,8 @@ info:
     * [API v1.5](https://api.coinpaprika.com/docs/1.5)
     * [API v1.6](https://api.coinpaprika.com/docs/1.6)
     # Version history
+    ## 1.7.9 - 2024.12.18
+    * API mappings endpoint documentation
     ## 1.7.8 - 2024.01.24
     * Plan limits update
     ## 1.7.7 - 2023.06.07
@@ -146,6 +148,9 @@ paths:
 
   /coins/{coin_id}:
     $ref: "paths/coins.yml#/coin_by_id"
+
+  /coins/mappings:
+    $ref: "paths/coins.yml#/mappings"
 
   /coins/{coin_id}/twitter:
     $ref: "paths/coins.yml#/twitter"

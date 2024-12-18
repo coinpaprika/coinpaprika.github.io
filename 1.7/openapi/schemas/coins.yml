@@ -338,3 +338,36 @@ coins_ohlcv:
       type: integer
       example: 83808161204
       nullable: true
+
+
+api_mappings:
+  type: object
+  properties:
+    coinpaprika:
+      type: string
+      example: btc-bitcoin
+      description: ID of coin on coinpaprika.com
+    coinmarketcap:
+      type: string
+      example: "1"
+      description: ID of coin on coinmarketcap.com
+    coingecko:
+      type: string
+      example: bitcoin
+      description: ID of coin on coingecko.com
+    cryptocompare:
+      type: string
+      example: "1"
+      description: ID of coin on cryptocompare.com
+    isin:
+      type: string
+      example: "XTV15WLZJMF0"
+      description: ISIN (International Securities Identification Number) of the coin
+    dti:
+      type: string
+      example: "V15WLZJMF"
+      description: Digital Token Identifier of the coin
+    updated_at:
+      type: string
+      description: Date of the last update of the mappings. RFC3999 (ISO-8601) format
+      example: "2024-12-12T13:13:28Z"
