@@ -9,6 +9,10 @@ info:
   description: |
     Coinpaprika API delivers precise & frequently updated market data from the world of crypto: coin prices, volumes, market caps, ATHs, return rates and more.
 
+    **New Documentation Available!**
+    
+    A new version of our documentation is now available at [docs.coinpaprika.com](https://docs.coinpaprika.com). We recommend using the updated documentation for the latest features and improvements.
+
     # Introduction
     If you want to use the Coinpaprika API, you have two main options: you can choose the API Free plan, which has sufficient limits for hobby and non-commercial use, or get one of the paid plans, ideal for commercial or professional use. To decide which plan is the best for you, check the [Plans and Pricing comparison](https://coinpaprika.com/api).
 
