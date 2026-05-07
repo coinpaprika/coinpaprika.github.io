@@ -25,6 +25,7 @@ info:
     | Starter    | https://api-pro.coinpaprika.com/v1/ |
     | Pro        | https://api-pro.coinpaprika.com/v1/ |
     | Business   | https://api-pro.coinpaprika.com/v1/ |
+    | Ultimate   | https://api-pro.coinpaprika.com/v1/ |
     | Enterprise | https://api-pro.coinpaprika.com/v1/ |
 
     # Authentication
@@ -63,9 +64,10 @@ info:
       | Plan       | Calls/month                         |
       |------------|-------------------------------------|
       | Free       | 20 000 |
-      | Starter    | 200 000 |
-      | Pro        | 500 000 |
-      | Business   | 3 000 000 |
+      | Starter    | 400 000 |
+      | Pro        | 1 000 000 |
+      | Business   | 5 000 000 |
+      | Ultimate   | 10 000 000 |
       | Enterprise | No limits |
 
     # API Clients
@@ -94,6 +96,10 @@ info:
     * [API v1.5](https://api.coinpaprika.com/docs/1.5)
     * [API v1.6](https://api.coinpaprika.com/docs/1.6)
     # Version history
+    ## 1.7.11 - 2026.05.05
+    * Refreshed plan / rate-limit table to match current pricing (Starter 400k, Pro 1M, Business 5M, Ultimate 10M)
+    * Added Ultimate plan row to base-URL and rate-limit tables
+    * Added `api-pro.coinpaprika.com/v1` to the `servers:` block so codegen produces clients that can hit paid endpoints
     ## 1.7.10 - 2025.04.14
     * Added `5m` interval for historical OHLCV endpoint
     ## 1.7.9 - 2024.12.18
@@ -126,6 +132,9 @@ info:
 
 servers:
 - url: https://api.coinpaprika.com/v1
+  description: Free plan
+- url: https://api-pro.coinpaprika.com/v1
+  description: Paid plans (Starter, Pro, Business, Ultimate, Enterprise)
 
 tags:
 - name: "Key"
